@@ -14,7 +14,7 @@ interface Iterator {
     next
 }
 
-Aggregate --> "Interator" : Creates
+Aggregate --> Iterator : Creates
 
 @enduml
 ```
