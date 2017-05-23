@@ -6,8 +6,15 @@
 
 
 interface Aggregate {
-  iterator
+    iterator
 }
+
+interface Iterator {
+    hasNext
+    next
+}
+
+Aggregate --> "Creates":Interator
 
 @enduml
 ```
