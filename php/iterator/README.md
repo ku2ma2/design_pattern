@@ -6,12 +6,12 @@
 
 
 interface Aggregate {
-    {abstract} boolean +iterator()
+    {abstract} Iterator iterator()
 }
 
 interface Iterator {
-    {abstract} boolean +hasNext()
-    {abstract} boolean +next()
+    {abstract} boolean hasNext()
+    {abstract} Object next()
 }
 
 Aggregate --> Iterator : Creates
