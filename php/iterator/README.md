@@ -16,20 +16,22 @@ interface Iterator {
 class BookShelf {
     +books
     +last
-    getBookAt()
-    appendBook()
-    getLength()
-    iterator()
+    +getBookAt(int index)
+    +appendBook(Book book)
+    +getLength()
+    +iterator()
 }
 class BookShelfIterator {
-    +bookShelf
-    +index
-    hasNext()
-    next()
+    -BookShelf bookShelf
+    -int index
+    +hasNext()
+    +next()
 }
 
 class Book {
-  +title
+  -name
+  +Book(string name)
+  +getName()
 }
 
 BookShelfIterator .up-> Iterator
