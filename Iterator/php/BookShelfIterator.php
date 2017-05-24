@@ -1,6 +1,6 @@
 <?php
 
-require_once "Iterator.php";
+require_once "IteratorInterface.php";
 require_once "BookShelf.php";
 
 class BookShelfIterator implements IteratorInterface {
