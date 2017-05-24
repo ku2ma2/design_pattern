@@ -28,9 +28,14 @@ class BookShelfIterator {
     next()
 }
 
+class Book {
+  +title
+}
+
 BookShelfIterator .up-> Iterator
 BookShelf .up-> Aggregate
 Aggregate -right-> Iterator : Creates
+Book o-up- BookShelf
 
 
 @enduml
