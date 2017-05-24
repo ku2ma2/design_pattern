@@ -1,13 +1,32 @@
 <?php
 
 require_once "Iterator.php";
+require_once "BookShelf.php";
 
-class BookShelfIterator implements Iterator {
+class BookShelfIterator implements IteratorInterface {
+
+  private $bookShelf;
+  private $index;
+
+  public function __construct( BookShelf $bookShelf ) {
+    
+    $this->bookShelf = $bookShelf;
+    $this->index = 0;
+  }
+  
   public function hasNext() {
-    return true;
+
+    if( $this->index < $this->bookShelf->getLength() ) {
+      return true;
+    } else {
+      return false;
+    }
+
   }
   public function next() {
-    return true;
+    $book = $this->bookShelf->getBookAt( $this->index );
+    $this->index++;
+    return $book;
   }
 }
 

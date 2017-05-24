@@ -2,12 +2,12 @@
 
 use PHPUnit\Framework\TestCase;
 
-require dirname(__DIR__) . '/BookShelf.php';
+require dirname(__DIR__) . '/Book.php';
 
 /**
- * 
+ * @covers Email
  */
-final class BookShelfTest extends TestCase
+final class BookTest extends TestCase
 {
     public function testPHPUnitTest()
     {

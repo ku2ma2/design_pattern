@@ -2,13 +2,17 @@
 
 class Book {
 
-  
+
   private $name;
-  function __constractor($name = null) {
-    return true;
+  
+  function __construct($name = '') {
+    $this->name = $name;
   }
+  /*+
+   * 
+   */
   public function getName() {
-    return true;
+    return $this->name;
   }
 }
 
