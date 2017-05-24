@@ -1,3 +1,6 @@
 <?php
 
-echo 'iterator';
+interface Iterater {
+    
+}
+

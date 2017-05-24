@@ -13,8 +13,25 @@ interface Iterator {
     {abstract} boolean hasNext()
     {abstract} Object next()
 }
+class BookShelf {
+    +books
+    +last
+    getBookAt()
+    appendBook()
+    getLength()
+    iterator()
+}
+class BookShelfIterator {
+    +bookShelf
+    +index
+    hasNext()
+    next()
+}
 
-Aggregate --> Iterator : Creates
+BookShelfIterator .up-> Iterator
+BookShelf .up-> Aggregate
+Aggregate -right-> Iterator : Creates
+
 
 @enduml
 ```
