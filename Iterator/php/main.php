@@ -15,3 +15,4 @@ while($it->hasNext()) {
 	echo $book->getName()."\n";
 }
 
+

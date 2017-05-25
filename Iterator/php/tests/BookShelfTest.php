@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require dirname(__DIR__) . '/BookShelf.php';
+require_once dirname(__DIR__) . '/BookShelf.php';
 
 /**
  * 
