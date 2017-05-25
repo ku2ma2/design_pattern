@@ -1,6 +1,6 @@
 <?php
 
-interface Aggregate {
-  public function iterator(); // Iteratorの作成
+interface Aggregate
+{
+    public function iterator(); // Iteratorの作成
 }
-

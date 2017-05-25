@@ -10,8 +10,7 @@ $bookShelf->appendBook(new Book("book4"));
 $bookShelf->appendBook(new Book("book5"));
 $it = $bookShelf->iterator();
 
-while($it->hasNext()) {
-	$book = $it->next();
-	echo $book->getName()."\n";
+while ($it->hasNext()) {
+    $book = $it->next();
+    echo $book->getName()."\n";
 }
-
