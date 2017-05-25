@@ -42,6 +42,15 @@ class BookShelfIterator implements IteratorInterface
             return false;
         }
     }
+    /**
+     * 次の本に進める
+     *
+     * 本棚の現在地(index)を次に進めて「現在の」本情報(Book)を返す
+     *
+     * @access public
+     * @param void
+     * @return Book $book 本のオブジェクト
+     */
     public function next()
     {
         $book = $this->bookShelf->getBookAt($this->index);
