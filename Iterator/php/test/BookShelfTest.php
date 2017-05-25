@@ -9,8 +9,16 @@ require dirname(__DIR__) . '/BookShelf.php';
  */
 final class BookShelfTest extends TestCase
 {
-    public function testPHPUnitTest()
+    public function testGetBookAt()
     {
-        $this->assertEquals( 0, false);
+        $bookShelf = new BookShelf(3);
+        $bookShelf->appendBook(new Book("book1"));
+        $bookShelf->appendBook(new Book("book2"));
+        $bookShelf->appendBook(new Book("book3"));
+
+        $result = $bookShelf->getBookAt(1);
+
+        $this->assertEquals( $result->getName(), "book2");
     }
+
 }
