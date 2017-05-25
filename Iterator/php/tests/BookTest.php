@@ -13,6 +13,6 @@ final class BookTest extends TestCase
     {
         $book = new Book("book1");
 
-        $this->assertEquals( $book->getName(), "book1");
+        $this->assertEquals($book->getName(), "book1");
     }
 }
