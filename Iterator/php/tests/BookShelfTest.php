@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/BookShelf.php';
 
 /**
- *
+ * BookShelf Test
  */
 final class BookShelfTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class BookShelfTest extends TestCase
     {
         $bookShelf = new BookShelf(3);
         $this->assertEquals(is_object($bookShelf), true);
-        
+
         return $bookShelf;
     }
     /**
