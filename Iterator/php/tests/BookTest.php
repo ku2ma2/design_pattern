@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/Book.php';
 
 /**
- * @covers Email
+ *
  */
 final class BookTest extends TestCase
 {
