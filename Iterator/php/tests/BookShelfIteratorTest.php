@@ -12,7 +12,7 @@ final class BookShelfIteratorTest extends TestCase
     public function testConstruct()
     {
         // 今回は３冊の本棚を作成する
-        $bookShelf = new BookShelf(3);
+        $bookShelf = new BookShelf();
         $bookShelf->appendBook(new Book("book1"));
         $bookShelf->appendBook(new Book("book2"));
         $bookShelf->appendBook(new Book("book3"));

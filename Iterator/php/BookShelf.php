@@ -29,9 +29,10 @@ class BookShelf implements Aggregate
      * @param int $maxsize
      * @return void
      */
-    public function __construct($maxsize)
+    public function __construct()
     {
-        $this->books = new SplFixedArray($maxsize);
+        // $this->books = new SplFixedArray($maxsize);
+        $this->books = [];
     }
 
     /**

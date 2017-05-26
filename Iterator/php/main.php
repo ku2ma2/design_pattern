@@ -2,7 +2,7 @@
 
 require_once "BookShelf.php";
 
-$bookShelf = new BookShelf(5);
+$bookShelf = new BookShelf();
 $bookShelf->appendBook(new Book("book1"));
 $bookShelf->appendBook(new Book("book2"));
 $bookShelf->appendBook(new Book("book3"));

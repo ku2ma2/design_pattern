@@ -1,8 +1,8 @@
 <?php
 
-require_once "BookShelf.php";
+require_once "PrintBanner.php";
 
-$bookShelf = new BookShelf(5);
+$bookShelf = new PRintBanner();
 $bookShelf->appendBook(new Book("book1"));
 $bookShelf->appendBook(new Book("book2"));
 $bookShelf->appendBook(new Book("book3"));
