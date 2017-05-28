@@ -1,4 +1,4 @@
-# Iterator パターン
+# Adapter パターン
 
 
 ```uml
