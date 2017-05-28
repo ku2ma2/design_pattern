@@ -11,7 +11,7 @@ final class BookShelfTest extends TestCase
 {
     public function testConstruct()
     {
-        $bookShelf = new BookShelf(3);
+        $bookShelf = new BookShelf();
         $this->assertEquals(is_object($bookShelf), true);
 
         return $bookShelf;

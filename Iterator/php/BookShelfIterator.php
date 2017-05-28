@@ -3,6 +3,14 @@
 require_once "IteratorInterface.php";
 require_once "BookShelf.php";
 
+/**
+ * 本棚向けイテレーター
+ *
+ * @access public
+ * @implements InteratorInterface
+ * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
+ * @copyright ku2ma2
+ */
 class BookShelfIterator implements IteratorInterface
 {
     private $bookShelf;

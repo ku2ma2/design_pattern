@@ -4,6 +4,16 @@ require_once "Aggregate.php";
 require_once "Book.php";
 require_once "BookShelfIterator.php";
 
+/**
+ * 本棚(BookShelf)
+ *
+ * 本棚を表すClassここに本(Book)などを追加していく
+ *
+ * @access public
+ * @implements Aggregate
+ * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
+ * @copyright ku2ma2
+ */
 class BookShelf implements Aggregate
 {
     private $books;
@@ -19,9 +29,10 @@ class BookShelf implements Aggregate
      * @param int $maxsize
      * @return void
      */
-    public function __construct($maxsize)
+    public function __construct()
     {
-        $this->books = new SplFixedArray($maxsize);
+        // $this->books = new SplFixedArray($maxsize);
+        $this->books = [];
     }
 
     /**

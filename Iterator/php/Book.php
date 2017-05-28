@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * 本(Book)
+ *
+ * 本(Book)を格納するクラス
+ *
+ * @access public
+ * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
+ * @copyright ku2ma2
+ */
 class Book
 {
     private $name;
