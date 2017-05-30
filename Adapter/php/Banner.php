@@ -22,10 +22,10 @@ class Banner
      * @param string $string 文字列
      * @return void
      */
-     public function __construct($string)
-     {
-         $this->string = $string;
-     }
+    public function __construct($string)
+    {
+        $this->string = $string;
+    }
 
     /**
      * 括弧をつける
@@ -36,10 +36,12 @@ class Banner
      * @param void
      * @return void
      */
-     public function showWithParen()
-     {
-         echo '('.$this->string.')'."\n";
-     }
+    public function showWithParen()
+    {
+        // 本来はechoで出力するが、テスト的な観点から値を返すように変更
+        // echo '('.$this->string.')'."\n";
+        return '('.$this->string.')';
+    }
 
     /**
      * アスタリスクをつける
@@ -50,8 +52,10 @@ class Banner
      * @param void
      * @return void
      */
-     public function showWithAster()
-     {
-         echo '*'.$this->string.'*'."\n";
-     }
+    public function showWithAster()
+    {
+        // 本来はechoで出力するが、テスト的な観点から値を返すように変更
+        // echo '*'.$this->string.'*'."\n";
+        return '*'.$this->string.'*';
+    }
 }
