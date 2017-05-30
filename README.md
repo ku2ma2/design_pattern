@@ -16,6 +16,6 @@ brew install plantuml
 
 Chrome拡張をインストールするとGithubのソース上で確認できる。
 
-- [PlantUML Viewer - Chrome ウェブストア](https://chrome.google.com/webstore/detail/plantuml-viewer/legbfeljfbjgfifnkmpoajgpgejojooj?hl=ja)
+- [Pegmatite](https://chrome.google.com/webstore/detail/pegmatite/jegkfbnfbfnohncpcfcimepibmhlkldo)
 
 
