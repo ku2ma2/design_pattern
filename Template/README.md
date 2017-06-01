@@ -5,30 +5,33 @@
 @startuml
 
 
-Class Main #E0FFFF {
+interface AbstractDisplay {
+    {abstract} +void open()
+    {abstract} +void print()
+    {abstract} +void close()
+    +void display()
 }
 
-interface Print {
-    {abstract} void printWeak()
-    {abstract} void printString()
+class CharDisplay {
+    -ch
+    +CharDisplay(char ch)
+    +open()
+    +print()
+    +close()
 }
 
-class PrintBanner {
-    +PrintBanner(String string)
-    +printWeak()
-    +printString()
-}
-
-class Banner {
+class StringDisplay {
   -String string
-  +Banner(String string)
-  +showWithParen()
-  +showWithAster()
+  -int width
+  +StringDisplay(String string)
+  +open()
+  +print()
+  +close()
+  -printLine()
 }
 
-Main -down-> Print : Uses
-PrintBanner .left-|> Print
-PrintBanner -right-|> Banner
+CharDisplay -up-|> AbstractDisplay
+StringDisplay -up-|> AbstractDisplay
 
 
 @enduml
