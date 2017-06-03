@@ -18,6 +18,10 @@ abstract class AbstractDisplay
     // Common method
     public function display()
     {
-        // TODO: 5回繰り返す
+        $this->open();
+        for ($i=0; $i<5; $i++) {
+            $this->print();
+        }
+        $this->close();
     }
 }
