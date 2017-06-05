@@ -12,6 +12,7 @@
     <testsuite name="Application Test Suite">
         <directory>./Iterator/php/tests/</directory>
         <directory>./Adapter/php/tests/</directory>
+        <directory>./Template/php/tests/</directory>
     </testsuite>
 </testsuites>
 <php>
