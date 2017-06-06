@@ -15,7 +15,18 @@ abstract class AbstractDisplay
     abstract public function print();
     abstract public function close();
 
-    public function display()
+    /**
+     * 表示関数
+     *
+     * open,print,closeなどを使って実際にロジックを
+     * 組み立てて表示する部分
+     *
+     * @access public
+     * @final
+     * @param void
+     * @return void
+     */
+    final public function display()
     {
         $this->open();
         for ($i=0; $i<5; $i++) {
