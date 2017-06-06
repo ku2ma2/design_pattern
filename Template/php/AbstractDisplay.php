@@ -15,7 +15,6 @@ abstract class AbstractDisplay
     abstract public function print();
     abstract public function close();
 
-    // Common method
     public function display()
     {
         $this->open();

@@ -33,5 +33,3 @@ PrintBanner -right-|> Banner
 
 @enduml
 ```
-
-- なぜBannerで出力するのだろう？テストをしやすいという意味では Banner側は値を返すだけの方がやりやすい気がする。
