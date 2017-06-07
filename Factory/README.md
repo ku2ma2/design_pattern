@@ -4,35 +4,46 @@
 ```uml
 @startuml
 
-
-interface AbstractDisplay {
-    {abstract} +void open()
-    {abstract} +void print()
-    {abstract} +void close()
-    +void display()
+package framework {
+    interface Factory {
+        {abstract} +void create()
+        {abstract} +void createProduct()
+        {abstract} +void registerProduct()
+    }
+    interface Product {
+        {abstract} +void use()
+    }
 }
 
-class CharDisplay {
-    -ch
-    +CharDisplay(char ch)
-    +open()
-    +print()
-    +close()
+package idcard {
+
+    class IDCardFactory {
+        +owners
+        +createProduct()
+        +registerProduct()
+        +getOwners()
+    }
+
+    class IDCard {
+        +owner
+        +use()
+        +getOwner()
+    }
 }
 
-class StringDisplay {
-  -String string
-  -int width
-  +StringDisplay(String string)
-  +open()
-  +print()
-  +close()
-  -printLine()
-}
 
-CharDisplay -up-|> AbstractDisplay
-StringDisplay -up-|> AbstractDisplay
-
+Factory -right-> Product: Creates
+IDCardFactory -up-|> Factory
+IDCardFactory -right-> IDCard: Creates
+IDCard -up-|> Product
 
 @enduml
 ```
+
+| パッケージ | 名前 | 解説 |
+|:---------|:----|:-----|
+| framework | Product | 抽象メソッドuseのみ定義されている抽象クラス |
+| framework | Factory | メソッドcreateを実装している抽象クラス |
+| idcard | IDCard | メソッドuseを実装しているクラス |
+| idcard | IDCardFactory | メソッドcreateProduct,registerProductを実装しているクラス |
+| 無名 | Main | 動作テスト用のクラス | 
