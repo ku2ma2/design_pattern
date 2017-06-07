@@ -6,26 +6,27 @@
 
 package framework {
     interface Factory {
-        {abstract} +void create()
-        {abstract} +void createProduct()
-        {abstract} +void registerProduct()
+        +final create(String owner)
+        {abstract} +createProduct()
+        {abstract} +registerProduct()
     }
     interface Product {
-        {abstract} +void use()
+        {abstract} +use()
     }
 }
 
 package idcard {
 
     class IDCardFactory {
-        +owners
-        +createProduct()
-        +registerProduct()
+        +List owners
+        +createProduct(String owner)
+        +registerProduct(Product product)
         +getOwners()
     }
 
     class IDCard {
-        +owner
+        +String owner
+        +IDCard(String owner)
         +use()
         +getOwner()
     }
