@@ -1,11 +1,15 @@
 <?php
 
-namespace Framework;
+namespace framework;
+
+require_once "Product.php";
+
+use framework\Product as Product;
 
 /**
- * ディスプレイのテンプレート
+ * Factoryクラス
  *
- * 拡張されたサブクラスに指定されたメソッドの実装を強制する
+ * 製品をどう作って登録するかを規定している
  *
  * @access public
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
@@ -13,27 +17,19 @@ namespace Framework;
  */
 abstract class Factory
 {
-    abstract public function open();
-    abstract public function print();
-    abstract public function close();
 
     /**
-     * 表示関数
-     *
-     * open,print,closeなどを使って実際にロジックを
-     * 組み立てて表示する部分
+     * 製品(Product)作成
      *
      * @access public
      * @final
-     * @param void
-     * @return void
+     * @param string $owner 所有者名
+     * @return Object $p 製品オブジェクト
      */
-    final public function display()
+    final public function create(string $owner)
     {
-        $this->open();
-        for ($i=0; $i<5; $i++) {
-            $this->print();
-        }
-        $this->close();
+        $p = $this->createProduct($owner);
     }
+    abstract protected function createProduct(string $owner);
+    abstract protected function registerProduct(Product $product);
 }
