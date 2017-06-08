@@ -1,4 +1,4 @@
-# Template パターン
+# Template Method パターン
 
 
 ```uml
