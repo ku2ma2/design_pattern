@@ -1,12 +1,13 @@
 <?php
 
-require_once "CharDisplay.php";
-require_once "StringDisplay.php";
+require_once "IDCardFactory.php";
 
-$d1 = new CharDisplay('H');
-$d2 = new StringDisplay('Hello, World');
-$d3 = new StringDisplay('こんにちは!');
+$factory = new IDCardFactory();
 
-$d1->display();
-$d2->display();
-$d3->display();
+$card1 = $factory->create("山田太郎");
+$card2 = $factory->create("伊藤二郎");
+$card3 = $factory->create("佐藤花子");
+
+$card1->use();
+$card2->use();
+$card3->use();
