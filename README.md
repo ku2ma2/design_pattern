@@ -2,7 +2,7 @@
 
 デザパタ練習
 
- [増補改訂版Java言語で学ぶデザインパターン入門](http://www.hyuki.com/dp/) を元にPHPやJSで実装する予定(あくまで予定)。
+ [増補改訂版Java言語で学ぶデザインパターン入門](http://www.hyuki.com/dp/) を元にPHPで実装する予定。
 
 ### PlantUMLメモ
 
