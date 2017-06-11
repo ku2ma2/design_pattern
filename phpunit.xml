@@ -13,6 +13,7 @@
         <directory>./Iterator/php/tests/</directory>
         <directory>./Adapter/php/tests/</directory>
         <directory>./Template/php/tests/</directory>
+        <directory>./Factory/php/tests/</directory>
     </testsuite>
 </testsuites>
 <php>
