@@ -29,6 +29,8 @@ abstract class Factory
     final public function create(string $owner)
     {
         $p = $this->createProduct($owner);
+        $this->registerProduct($p);
+        return $p;
     }
     abstract protected function createProduct(string $owner);
     abstract protected function registerProduct(Product $product);

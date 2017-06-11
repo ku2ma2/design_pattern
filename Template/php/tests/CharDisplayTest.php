@@ -1,6 +1,6 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase as TestCase;
 
 require_once dirname(__DIR__) . '/CharDisplay.php';
 
