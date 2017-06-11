@@ -36,10 +36,28 @@ class IDCardFactory extends \framework\Factory
         return new IDCard($owner);
     }
 
+    /**
+     * 認証番号カードの登録
+     *
+     * @access protected
+     * @param Object $product 製品オブジェクト(ここではIDCard)
+     * @return void
+     * @see IDCard::getOwner
+     */
     protected function registerProduct(\framework\Product $product)
     {
         $this->owners[] = $product->getOwner();
     }
+
+    /**
+     * カード所有者一覧
+     *
+     * 認証番号カードの所有者一覧を取得する
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function getOwners()
     {
         return $this->owners;
