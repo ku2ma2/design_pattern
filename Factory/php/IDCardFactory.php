@@ -31,7 +31,7 @@ class IDCardFactory extends \framework\Factory
      * @return object IDCard
      * @see IDCard::__construct
      */
-    public function createProduct(string $owner)
+    protected function createProduct(string $owner)
     {
         return new IDCard($owner);
     }
