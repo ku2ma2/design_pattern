@@ -2,7 +2,7 @@
 
 require_once "IDCardFactory.php";
 
-$factory = new IDCardFactory();
+$factory = new \idcard\IDCardFactory();
 
 $card1 = $factory->create("山田太郎");
 $card2 = $factory->create("伊藤二郎");

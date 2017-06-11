@@ -14,7 +14,7 @@ require_once "Product.php";
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-abstract class IDCard extends \framework\Product
+class IDCard extends \framework\Product
 {
     private $owner;
 
@@ -29,7 +29,7 @@ abstract class IDCard extends \framework\Product
      */
     public function __construct(string $owner)
     {
-        echo $owner . "のカードを作ります\n";
+        echo $owner . "のカードを作ります。\n";
         $this->owner = $owner;
     }
 
@@ -42,7 +42,7 @@ abstract class IDCard extends \framework\Product
      */
     public function use()
     {
-        echo $this->owner . "のカードを使います\n";
+        echo $this->owner . "のカードを使います。\n";
     }
 
     /**
