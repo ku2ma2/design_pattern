@@ -27,7 +27,7 @@ class IDCard extends \framework\Product
      * @param string $owner 認証番号カード所有者
      * @return void
      */
-    public function __construct(string $owner)
+    final public function __construct(string $owner)
     {
         echo $owner . "のカードを作ります。\n";
         $this->owner = $owner;
