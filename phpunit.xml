@@ -14,6 +14,7 @@
         <directory>./Adapter/php/tests/</directory>
         <directory>./Template/php/tests/</directory>
         <directory>./Factory/php/tests/</directory>
+        <directory>./Singleton/php/tests/</directory>
     </testsuite>
 </testsuites>
 <php>
