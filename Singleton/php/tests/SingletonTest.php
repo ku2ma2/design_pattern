@@ -16,5 +16,14 @@ final class SigletonTest extends TestCase
         $actual = ob_get_clean();
         $expected = 'インスタンスを生成しました。'."\n";
         $this->assertEquals($expected, $actual);
+        return $obj;
+    }
+
+    public function testAssertObj()
+    {
+        $obj1 = Singleton::getInstance();
+        $obj2 = Singleton::getInstance();
+
+        $this->assertSame($obj1, $obj2);
     }
 }
