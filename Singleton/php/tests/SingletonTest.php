@@ -2,12 +2,12 @@
 
 use PHPUnit\Framework\TestCase as TestCase;
 
-require_once dirname(__DIR__) . '/Sigleton.php';
+require_once dirname(__DIR__) . '/Singleton.php';
 
 /**
- * Sigleton Test
+ * Singleton Test
  */
-final class SigletonTest extends TestCase
+final class SingletonTest extends TestCase
 {
     public function testGetInstance()
     {
