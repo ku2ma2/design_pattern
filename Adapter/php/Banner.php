@@ -22,7 +22,7 @@ class Banner
      * @param string $string 文字列
      * @return void
      */
-    public function __construct($string)
+    public function __construct(string $string)
     {
         $this->string = $string;
     }
