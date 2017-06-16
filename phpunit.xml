@@ -10,11 +10,7 @@
          syntaxCheck="false">
 <testsuites>
     <testsuite name="Application Test Suite">
-        <directory>./Iterator/php/tests/</directory>
-        <directory>./Adapter/php/tests/</directory>
-        <directory>./Template/php/tests/</directory>
-        <directory>./Factory/php/tests/</directory>
-        <directory>./Singleton/php/tests/</directory>
+        <directory>./**/php/tests/</directory>
     </testsuite>
 </testsuites>
 <php>

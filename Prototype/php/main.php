@@ -5,9 +5,9 @@ require_once "Manager.php";
 $manager = new Manager();
 
 // 準備
-$upen = new UnderlinePen('~');
-$mbox = new MessageBox('*');
-$sbox = new MessageBox('/');
+$upen = new \prototype\UnderlinePen('~');
+$mbox = new \prototype\MessageBox('*');
+$sbox = new \prototype\MessageBox('/');
 
 $manager.register('strong message', $upen);
 $manager.register('warning box', $mbox);
