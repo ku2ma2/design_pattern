@@ -29,7 +29,7 @@ class PrintBanner extends Banner implements PrintInterface
      * @return void
      * @see Banner::__construct
      */
-    public function __construct($string)
+    public function __construct(string $string)
     {
         parent::__construct($string);
     }
