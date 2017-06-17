@@ -6,7 +6,8 @@ require_once "Product.php";
 /**
  * 下線を引く
  *
- * 与えられた文字列に下線を引く管理は上位のManagerによって行われる。
+ * 与えられた文字列に下線を引く。
+ * このクラスの生成自体は上位のManagerによって行われる。
  *
  * @access public
  * @implements Product
@@ -15,6 +16,7 @@ require_once "Product.php";
  */
 class UnderlinePen implements Product
 {
+    // 下線文字
     private $ulchar;
 
     /**
