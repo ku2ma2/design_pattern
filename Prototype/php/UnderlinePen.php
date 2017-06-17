@@ -51,8 +51,28 @@ class UnderlinePen implements Product
         echo "\n";
     }
 
+    /**
+     * 自分をコピー(Clone)する
+     *
+     * シャローコピーなので、ディープコピーが必要であれば
+     * __cloneの実装が必要
+     * http://php.net/manual/ja/language.oop5.cloning.php
+     * http://project-p.jp/halt/2013/06/24/100832/
+     *
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function createClone()
     {
-        return true;
+        $p = null;
+        try {
+            // 自分自身のクローンを作成する
+            $p = clone $this;
+        } catch (Exception $e) {
+            echo $e->getMessage() . "\n";
+        }
+        return $p;
     }
 }

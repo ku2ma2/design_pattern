@@ -9,9 +9,11 @@ class Manager
 
     public function register(string $name, Product $proto)
     {
-        return true;
+        $this->showcase[$name] = $proto;
     }
-    public function create(string $prototype)
+    public function create(string $protoname)
     {
+        $p = $this->showcase[$protoname];
+        return $p->createClone();
     }
 }
