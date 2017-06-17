@@ -1,37 +1,35 @@
-# Template Method パターン
+# Prototype パターン
 
 
 ```uml
 @startuml
 
-
-interface AbstractDisplay {
-    {abstract} +void open()
-    {abstract} +void print()
-    {abstract} +void close()
-    +void display()
+class Manager {
+    -showcase
+    +void register(String name, Product proto)
+    +Product create(String protoname)
 }
 
-class CharDisplay {
-    -ch
-    +CharDisplay(char ch)
-    +open()
-    +print()
-    +close()
+interface Product {
+    {abstract} +void use(String s)
+    {abstract} +Product createClone()
 }
 
-class StringDisplay {
-  -String string
-  -int width
-  +StringDisplay(String string)
-  +open()
-  +print()
-  +close()
-  -printLine()
+class UnderlinePen {
+    -ulchar
+    +void use(String s)
+    +Product createClone()
 }
 
-CharDisplay -up-|> AbstractDisplay
-StringDisplay -up-|> AbstractDisplay
+class MessageBox {
+    -decochar
+    +void use(String s)
+    +Product createClone()
+}
+
+Manager -right-> Product: Uses
+UnderlinePen .up.|> Product
+MessageBox .up.|> Product
 
 
 @enduml
