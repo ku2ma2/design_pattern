@@ -4,32 +4,34 @@
 ```uml
 @startuml
 
-class Manager {
-    -showcase
-    +void register(String name, Product proto)
-    +Product create(String protoname)
+
+interface AbstractDisplay {
+    {abstract} +void open()
+    {abstract} +void print()
+    {abstract} +void close()
+    +void display()
 }
 
-interface Product {
-    {abstract} +void use(String s)
-    {abstract} +Product createClone()
+class CharDisplay {
+    -ch
+    +CharDisplay(char ch)
+    +open()
+    +print()
+    +close()
 }
 
-class UnderlinePen {
-    -ulchar
-    +void use(String s)
-    +Product createClone()
+class StringDisplay {
+  -String string
+  -int width
+  +StringDisplay(String string)
+  +open()
+  +print()
+  +close()
+  -printLine()
 }
 
-class MessageBox {
-    -decochar
-    +void use(String s)
-    +Product createClone()
-}
-
-Manager -right-> Product: Uses
-UnderlinePen .up.|> Product
-MessageBox .up.|> Product
+CharDisplay -up-|> AbstractDisplay
+StringDisplay -up-|> AbstractDisplay
 
 
 @enduml
