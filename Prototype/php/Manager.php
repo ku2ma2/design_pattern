@@ -6,7 +6,8 @@ require_once "Product.php";
 /**
  * インスタンス管理
  *
- * Product Interfaceを介して「登録」「複製」を行う
+ * Product Interfaceを介して「作成された」インスタンスの
+ * 「登録」や「複製」などの管理を行う
  *
  * @access public
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
