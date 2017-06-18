@@ -12,7 +12,7 @@ class Director {
     +Director()
 }
 
-class Builder {
+abstract Builder {
   {abstract} +makeTitle()
   {abstract} +makeString()
   {abstract} +makeItems()
