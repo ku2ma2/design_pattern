@@ -1,17 +1,19 @@
 <?php
 
 require_once "Manager.php";
+require_once "UnderlinePen.php";
+require_once "MessageBox.php";
 
-$manager = new Manager();
+$manager = new \prototype\Manager();
 
 // 準備
 $upen = new \prototype\UnderlinePen('~');
 $mbox = new \prototype\MessageBox('*');
 $sbox = new \prototype\MessageBox('/');
 
-$manager.register('strong message', $upen);
-$manager.register('warning box', $mbox);
-$manager.register('slash box', $sbox);
+$manager->register('strong message', $upen);
+$manager->register('warning box', $mbox);
+$manager->register('slash box', $sbox);
 
 // 生成
 $p1 = $manager->create("strong message");
