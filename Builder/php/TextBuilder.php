@@ -7,6 +7,13 @@ class TextBuilder
 
     public function makeTitle(string $title)
     {
-        $this->buffer .= '==============================='."\n";
+        $this->buffer .= '=============================='."\n";
+        $this->buffer .= "『{$title}』\n";
+        $this->buffer .= "\n";
+    }
+    
+    public function getResult()
+    {
+        return $this->buffer;
     }
 }
