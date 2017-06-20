@@ -32,4 +32,30 @@ final class TextBuilderTest extends TestCase
         
         $this->assertEquals($textbuilder->getResult(), $expected);
     }
+
+    public function testMakeItems()
+    {
+        $items = [];
+        $items[] = 'おはようございます';
+        $items[] = 'いつもお世話になっております';
+
+        $textbuilder = new TextBuilder();
+        $textbuilder->makeItems($items);
+
+        $expected = '　・おはようございます'."\n";
+        $expected .= '　・いつもお世話になっております'."\n";
+        $expected .= "\n";
+        
+        $this->assertEquals($textbuilder->getResult(), $expected);
+    }
+
+    public function testClose()
+    {
+        $textbuilder = new TextBuilder();
+        $textbuilder->close();
+
+        $expected = '=============================='."\n";
+        
+        $this->assertEquals($textbuilder->getResult(), $expected);
+    }
 }
