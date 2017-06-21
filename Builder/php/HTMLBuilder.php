@@ -6,6 +6,16 @@ class HTMLBuilder extends Builder
     private $filename = '';
     private $buffer = '';
 
+    /**
+     * タイトル生成
+     *
+     * 与えられた文字列からタイトルを生成する。
+     * テストの関係で直接ファイルにではなくBufferに書き込んでいる
+     *
+     * @access public
+     * @param string $title タイトル文字列
+     * @return void
+     */
     public function makeTitle(string $title)
     {
         // タイトルからファイル名を生成する
