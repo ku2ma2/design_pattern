@@ -41,6 +41,7 @@ class HTMLBuilder extends Builder
 
     public function close()
     {
+        // TODO: ファイル書き込みを追加
         $this->buffer .= "</body></html>\n";
     }
 
