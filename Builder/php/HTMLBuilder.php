@@ -78,8 +78,11 @@ class HTMLBuilder extends Builder
      */
     public function close()
     {
-        // TODO: ファイル書き込みを追加
         $this->buffer .= "</body></html>\n";
+
+        // [CAUTION]: 本来保存をする処理になっているが
+        // 保存パスなどが一時的なのでコメントアウトしている
+        // file_put_contents($this->filename, $this->buffer);
     }
 
     /**
