@@ -22,6 +22,6 @@ class Director
             "おやすみなさい。",
             "さようなら。"
         ]);
-        $this->builder.close(); // 文章を完成
+        $this->builder->close(); // 文章を完成
     }
 }
