@@ -11,11 +11,11 @@ final class SingletonTest extends TestCase
 {
     public function testGetInstance()
     {
-        ob_start();
         $obj = Singleton::getInstance();
-        $actual = ob_get_clean();
+
         $expected = 'インスタンスを生成しました。'."\n";
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
+
         return $obj;
     }
 

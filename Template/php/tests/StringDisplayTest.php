@@ -11,12 +11,9 @@ final class StringDisplayTest extends TestCase
 {
     public function testDisplay()
     {
-        $d2 = new StringDisplay('Hello, World');
-        $d3 = new StringDisplay('こんにちは!');
+        $d = new StringDisplay('Hello, World');
 
-        ob_start();
-        $d2->display();
-        $actual = ob_get_clean();
+        $d->display();
         $expected = "+------------+\n";
         $expected .= "|Hello, World|\n";
         $expected .= "|Hello, World|\n";
@@ -24,18 +21,6 @@ final class StringDisplayTest extends TestCase
         $expected .= "|Hello, World|\n";
         $expected .= "|Hello, World|\n";
         $expected .= "+------------+\n";
-        $this->assertEquals($expected, $actual);
-
-        ob_start();
-        $d3->display();
-        $actual = ob_get_clean();
-        $expected = "+------+\n";
-        $expected .= "|こんにちは!|\n";
-        $expected .= "|こんにちは!|\n";
-        $expected .= "|こんにちは!|\n";
-        $expected .= "|こんにちは!|\n";
-        $expected .= "|こんにちは!|\n";
-        $expected .= "+------+\n";
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
 }
