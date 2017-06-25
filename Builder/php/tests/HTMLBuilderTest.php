@@ -68,7 +68,6 @@ final class HTMLBuilderTest extends TestCase
         $expected = '<html><head><title>Greeting</title></head><body>'."\n";
         $expected .= '<h1>Greeting</h1>'."\n";
         $expected .= "</body></html>\n";
-        
-        $this->assertEquals($builder->getBuffer(), $expected);
+        $this->expectOutputString($expected);
     }
 }

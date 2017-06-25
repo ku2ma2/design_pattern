@@ -31,7 +31,7 @@ class HTMLBuilder extends Builder
         // タイトルからファイル名を生成する
         $this->filename = $title . ".html";
 
-        $this->buffer = "<html><head><title>${title}</title></head><body>\n";
+        $this->buffer .= "<html><head><title>${title}</title></head><body>\n";
         $this->buffer .= "<h1>${title}</h1>\n";
     }
 
@@ -60,7 +60,7 @@ class HTMLBuilder extends Builder
      */
     public function makeItems(array $items)
     {
-        $this->buffer = "<ul>\n";
+        $this->buffer .= "<ul>\n";
         foreach ($items as $item) {
             $this->buffer .= "<li>{$item}</li>\n";
         }
@@ -83,6 +83,7 @@ class HTMLBuilder extends Builder
         // [CAUTION]: 本来保存をする処理になっているが
         // 保存パスなどが一時的なのでコメントアウトしている
         // file_put_contents($this->filename, $this->buffer);
+        echo $this->buffer;
     }
 
     /**

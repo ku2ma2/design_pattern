@@ -13,14 +13,11 @@ final class MessageBoxTest extends TestCase
     {
         $upen = new \prototype\MessageBox("*");
 
-        ob_start();
         $upen->use("Hello");
-        $actual = ob_get_clean();
 
         $expected = "*********\n";
         $expected .= "* Hello *\n";
         $expected .= "*********\n";
-
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
 }
