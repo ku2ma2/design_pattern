@@ -42,6 +42,7 @@ package listfactory {
         +makeHTML()
     }
     class ListPage {
+        +ListPage(String title, String author)
         +makeHTML()
     }
     class ListFactory {
