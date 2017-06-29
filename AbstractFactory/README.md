@@ -15,13 +15,15 @@ package facotory {
     }
     abstract Tray {
         +tray
-        +add()
+        +Tray(String caption)
+        +add(Item item)
         {abstract} +makeHTML()
     }
     abstract Page {
         +title
         +author
-        +add()
+        +Page(String title, String author)
+        +add(Item item)
         +output()
         {abstract} +makeHTML()
     }
@@ -39,6 +41,7 @@ package listfactory {
         +makeHTML()
     }
     class ListTray {
+        +ListTray(String caption)
         +makeHTML()
     }
     class ListPage {

@@ -2,21 +2,21 @@
 
 namespace listfactory;
 
-require_once dirname(__DIR__) . '/factory/Page.php';
+require_once dirname(__DIR__) . '/factory/Tray.php';
 
 /**
- * リスト表示クラス
+ * 大項目クラス
  *
- * Pageのサブクラスとしてフィールドの内容を使ってページを
- * 構成している。
+ * Trayのサブクラスとしてフィールドの内容を使ってリストやトレイ
+ * (項目)をまとめるクラス
  *
  * @access public
  *
- * @extends \factory\Page
+ * @extends \factory\Tray
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class ListPage extends \factory\Page
+class ListTray extends \factory\Tray
 {
     /**
      * コンストラクタ
@@ -24,20 +24,19 @@ class ListPage extends \factory\Page
      * 親(ここではPage)の抽象クラスのものを呼び出す
      *
      * @access public
-     * @param string $title タイトル
-     * @param string $author 所有者
+     * @param string $caption トレイの説明(Caption)
      * @return void
-     * @see \factory\Page::__construct
+     * @see \factory\Tray::__construct
      */
-    public function __construct(string $title, string $author)
+    public function __construct(string $caption)
     {
-        parent::__construct($title, $author);
+        parent::__construct($caption);
     }
 
     /**
      * HTML生成
      *
-     * 持ち合わせているクラス変数からHTMLの文字列を生成する
+     * 持ち合わせているクラス変数から具体的なHTMLの文字列を生成する
      * 途中でItemをループさせているので注意
      *
      * @access public
