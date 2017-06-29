@@ -1,4 +1,4 @@
-# Factory Method パターン
+# Abstract Factory パターン
 
 
 ```uml
