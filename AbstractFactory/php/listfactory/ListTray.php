@@ -47,16 +47,14 @@ class ListTray extends \factory\Tray
     public function makeHTML()
     {
         $buffer = '';
-        $buffer .= "<html><head><title>{$this->title}</title></head>\n";
-        $buffer .= "<body>\n";
-        $buffer .= "<h1>{$this->title}</h1>\n";
+        $buffer .= "<li>\n";
+        $buffer .= "{$this->caption}\n";
         $buffer .= "<ul>\n";
-        foreach ($this->content as $item) {
+        foreach ($this->tray as $item) {
             $buffer .= $item->makeHTML();
         }
         $buffer .= "</ul>\n";
-        $buffer .= "<hr><address>{$this->author}</address>\n";
-        $buffer .= "</body></html>\n";
+        $buffer .= "</li>\n";
 
         return $buffer;
     }
