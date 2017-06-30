@@ -30,7 +30,7 @@ abstract class Factory
     public function getFactory(string $classnane)
     {
         try {
-            $this->factory = new $classname
+            $this->factory = new $classname;
         } catch (Exception $e) {
             echo "捕捉した例外：" . $e->getMessage() . "\n";
         }

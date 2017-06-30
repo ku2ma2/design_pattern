@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase as TestCase;
 
 require_once dirname(__DIR__) . '/listfactory/ListPage.php';
+require_once dirname(__DIR__) . '/listfactory/ListLink.php';
 
 /**
  * ListPage Test
