@@ -15,7 +15,7 @@ namespace factory;
 abstract class Item
 {
     protected $caption;
-    public function Item(string $caption)
+    public function __construct(string $caption)
     {
         $this->caption = $caption;
     }

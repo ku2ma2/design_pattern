@@ -11,16 +11,15 @@ final class ListTrayTest extends TestCase
 {
     public function testCreate()
     {
-        $page = new \listfactory\ListTray($title = 'タイトル', $author = '所有者');
+        $page = new \listfactory\ListTray($caption = 'キャプション');
+
         $expected = '';
-        $expected .= '<html><head><title>タイトル</title></head>'."\n";
-        $expected .= '<body>'."\n";
-        $expected .= '<h1>タイトル</h1>'."\n";
+        $expected .= '<li>'."\n";
+        $expected .= 'キャプション'."\n";
         $expected .= '<ul>'."\n";
         // TODO: ここにItemの項目を入れる
         $expected .= '</ul>'."\n";
-        $expected .= '<hr><address>所有者</address>'."\n";
-        $expected .= '</body></html>'."\n";
+        $expected .= '</li>'."\n";
 
         $this->assertEquals($expected, $page->makeHTML());
     }

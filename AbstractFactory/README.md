@@ -1,4 +1,4 @@
-# Factory Method パターン
+# Abstract Factory パターン
 
 
 ```uml
@@ -7,10 +7,12 @@
 package facotory {
     abstract Item {
         +caption
+        +Item(String caption)
         {abstract} +makeHTML()
     }
     abstract Link {
         +url
+        +Link(String caption, String url)
         {abstract} +makeHTML()
     }
     abstract Tray {
@@ -38,6 +40,7 @@ package facotory {
 package listfactory {
 
     class ListLink {
+        +ListLink(String caption, String url)
         +makeHTML()
     }
     class ListTray {
@@ -49,9 +52,9 @@ package listfactory {
         +makeHTML()
     }
     class ListFactory {
-        +createLink()
-        +createTray()
-        +createPage()
+        +createLink(String caption, String url)
+        +createTray(String caption)
+        +createPage(String title, String author)
     }
 }
 
