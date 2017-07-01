@@ -18,7 +18,6 @@ final class ListTrayTest extends TestCase
         $expected .= '<li>'."\n";
         $expected .= 'キャプション'."\n";
         $expected .= '<ul>'."\n";
-        // TODO: ここにItemの項目を入れる
         $expected .= '</ul>'."\n";
         $expected .= '</li>'."\n";
 
