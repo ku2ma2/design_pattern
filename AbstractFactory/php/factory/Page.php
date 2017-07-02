@@ -57,8 +57,10 @@ abstract class Page
     public function output()
     {
         try {
-            $filename = $this->title + ".html";
+            $filename = $this->title . ".html";
+            var_dump($filename);
             file_put_contents($filename, $this->makeHTML());
+            echo $this->makeHTML()."\n"; // DEBUG
             echo "${filename}を作成しました。\n";
         } catch (Exception $e) {
             echo "捕捉した例外: " . $e->getMessage() . "\n";

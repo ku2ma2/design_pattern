@@ -69,10 +69,10 @@ Factory -up-> Page: Creates
 ListFactory -up-> ListLink: Creates
 ListFactory -up-> ListTray: Creates
 ListFactory -up-> ListPage: Creates
-ListFactory -up-|> Factory
-ListLink -up-|> Link
-ListTray -up-|> Tray
-ListPage -up-|> Page
+ListFactory --up--|> Factory
+ListLink --up--|> Link
+ListTray --up--|> Tray
+ListPage --up--|> Page
 
 @enduml
 ```

@@ -2,7 +2,7 @@
 
 namespace factory;
 
-require_once dirname(__DIR__) . '/listfactory/ListFactoray.php';
+require_once dirname(__DIR__) . '/listfactory/ListFactory.php';
 
 /**
  * 抽象的な工場
@@ -18,21 +18,27 @@ require_once dirname(__DIR__) . '/listfactory/ListFactoray.php';
  */
 abstract class Factory
 {
-    private $factory = [];
 
     /**
      * 工場作成
      *
      * @access public
+     * @static
      * @param string $classname 工場名(クラス名)
      * @return object $this->factory
      */
-    public function getFactory(string $classnane)
+    public static function getFactory($classname)
     {
+        $factory = null;
         try {
-            $this->factory = new $classname;
+            $factory = new $classname;
         } catch (Exception $e) {
             echo "捕捉した例外：" . $e->getMessage() . "\n";
         }
+
+        return $factory;
     }
+    abstract public function createLink(string $caption, string $url);
+    abstract public function createTray(string $caption);
+    abstract public function createPage(string $title, string $author);
 }

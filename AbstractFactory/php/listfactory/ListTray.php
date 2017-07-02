@@ -43,6 +43,7 @@ class ListTray extends \factory\Tray
      * @param void
      * @return void
      * @see \factory\Item::makeHTML()
+     * @todo itemのループはIteratorにしても良いかもしれない。
      */
     public function makeHTML()
     {
