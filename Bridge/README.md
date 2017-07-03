@@ -23,9 +23,13 @@ abstract DisplayImpl {
 }
 
 class StringDisplayImpl {
+    -String String
+    -int width
+    +StringDisplayImpl(String string)
     +rawOpen()
     +rawPrint()
     +rawClose()
+    -printLine()
 }
 
 Display o-right-> DisplayImpl
