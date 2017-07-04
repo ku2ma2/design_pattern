@@ -6,8 +6,8 @@
  * 抽象階層(ここではDisplayやCountDisplay)側から移譲されている
  * 「実装階層」側を規定する抽象クラス
  *
+ * @abstract
  * @access public
- * @extends DisplayImpl
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
