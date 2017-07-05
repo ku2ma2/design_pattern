@@ -1,4 +1,4 @@
-# Prototype パターン
+# Bridge パターン
 
 
 ```uml
