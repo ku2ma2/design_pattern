@@ -5,6 +5,7 @@
 @startuml
 
 class Display {
+    +Display(DisplayImpl impl)
     +impl
     +open()
     +print()
@@ -13,6 +14,7 @@ class Display {
 }
 
 class CountDisplay {
+    +CountDisplay(DisplayImpl impl)    
     +multiDisplay()
 }
 
@@ -39,3 +41,5 @@ StringDisplayImpl -up-|> DisplayImpl
 
 @enduml
 ```
+
+
