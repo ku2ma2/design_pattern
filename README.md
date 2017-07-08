@@ -10,7 +10,8 @@
 - [\[php\] デザインパターン練習 Adapter](https://ku2ma2.github.io/design_pattern/2017/06/02/php-adapter.html)
 - [\[php\] デザインパターン練習 Template Method](https://ku2ma2.github.io/design_pattern/2017/06/08/php-template.html)
 - [\[php\] デザインパターン練習 Facotry Method](https://ku2ma2.github.io/design_pattern/2017/06/20/php-factory.html)
-- [\[php\] デザインパターン練習 Singleton](https://ku2ma2.github.io/design_pattern/2017/06/30/php-sigleton.html)
+- [\[php\] デザインパターン練習 Singleton](https://ku2ma2.github.io/design_pattern/2017/06/30/php-singleton.html)
+- [\[php\] デザインパターン練習 Prototype](https://ku2ma2.github.io/design_pattern/2017/07/07/php-prototype.html)
 
 ### PlantUMLメモ
 
