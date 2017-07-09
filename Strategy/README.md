@@ -13,8 +13,8 @@ class Player {
 }
 
 interface Strategy {
-    {abstract} +nextHand()
-    {abstract} +study()
+    {abstract} +Hand nextHand()
+    {abstract} +void study(boolean win)
 }
 
 class WinningStrategy {
