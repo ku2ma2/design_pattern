@@ -36,10 +36,10 @@ class Hand {
     -handvalue
     -Hand(int handvalue)
     +Hand getHand(int handvalue)
-    +isStrongerThan(Hand h)
-    +isWeakerThan(Hand h)
-    -fight(Hand h)
-    +toString()
+    +Boolean isStrongerThan(Hand h)
+    +Boolean isWeakerThan(Hand h)
+    -int fight(Hand h)
+    +string toString()
 }
 
 Player o-right-> Strategy

@@ -2,9 +2,11 @@
 
 class Hand
 {
-    const HANDVALUE_GUU = 0; // ぐー
+    const HANDVALUE_GUU = 0; // グー
     const HANDVALUE_CHO = 1; // チョキ
     const HANDVALUE_PAA = 2; // パー
+
+    private static $name = ['グー','チョキ','パー']; // 文字列表現
 
     private static $hand = false; // 配列となりここにHandインスタンスが格納
     private $handvalue; // じゃんけんの手の値
@@ -104,5 +106,19 @@ class Hand
             // 勝負に負けた(hが弱かった場合は)は -1
             return -1;
         }
+    }
+
+    /**
+     * 文字列表現
+     *
+     * 現状の手役コードの文字列表現を返す
+     *
+     * @access public
+     * @param void
+     * @return string self::$name[] 文字列表現
+     */
+    public function toString()
+    {
+        return self::$name[$this->handvalue];
     }
 }
