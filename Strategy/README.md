@@ -1,4 +1,4 @@
-# Prototype パターン
+# Strategy パターン
 
 
 ```uml
@@ -35,7 +35,7 @@ class Hand {
     -name
     -handvalue
     -Hand(int handvalue)
-    +getHand(int handvalue)
+    +Hand getHand(int handvalue)
     +isStrongerThan(Hand h)
     +isWeakerThan(Hand h)
     -fight(Hand h)

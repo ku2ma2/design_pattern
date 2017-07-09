@@ -7,7 +7,7 @@ require_once dirname(__DIR__) . '/UnderlinePen.php';
 require_once dirname(__DIR__) . '/MessageBox.php';
 
 /**
- * UnderlinePen Test
+ * Manager Test
  */
 final class ManegerTest extends TestCase
 {
