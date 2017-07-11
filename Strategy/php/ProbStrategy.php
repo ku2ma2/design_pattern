@@ -3,6 +3,18 @@
 require_once "Hand.php";
 require_once "Strategy.php";
 
+/**
+ * 履歴を使ったじゃんけん戦略
+ *
+ * 対戦履歴からより勝ちに近いものが選びやすくなっている
+ * 乱数で次の手を決める戦略
+ *
+ * @access public
+ * @implements Strategy
+ * @access public
+ * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
+ * @copyright ku2ma2
+ */
 class ProbStrategy implements Strategy
 {
     private $prevHandValue = 0;

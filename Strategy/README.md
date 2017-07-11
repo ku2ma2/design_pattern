@@ -5,11 +5,17 @@
 @startuml
 
 class Player {
-    +strategy
+    -String name
+    -Strategy strategy
+    -int wincount
+    -int losecount
+    -int gamecount
+    +Player(String name, Strategy strategy)
     +netHand()
     +win()
     +lose()
     +even()
+    +toString()
 }
 
 interface Strategy {

@@ -3,6 +3,17 @@
 require_once "Hand.php";
 require_once "Strategy.php";
 
+/**
+ * 乱数でのじゃんけん戦略
+ *
+ * 単純に乱数で次の手を決める戦略
+ *
+ * @access public
+ * @implements Strategy
+ * @access public
+ * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
+ * @copyright ku2ma2
+ */
 class WinningStrategy implements Strategy
 {
     private $won = false;
