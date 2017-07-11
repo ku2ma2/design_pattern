@@ -11,13 +11,16 @@ class WinningStrategy implements Strategy
     /**
      * コンストラクタ
      *
+     * mt_seedで乱数シードを与えている。
+     * またHandオブジェクトを初期化。
+     *
      * @access public
      * @param int $seed 変数シード
      * @return void
      */
     public function __construct(int $seed)
     {
-        mt_land($seed);
+        mt_seed($seed);
         $this->prevHand = Hand::getHand(0); // 前回の手役を初期化
     }
 
@@ -31,7 +34,7 @@ class WinningStrategy implements Strategy
      * @param void
      * @return $this->prevHand
      */
-    public function netHand()
+    public function nextHand()
     {
         if (!$this->won) {
             $this->prevHand = Hand::getHand(mt_rand(0, 2));
