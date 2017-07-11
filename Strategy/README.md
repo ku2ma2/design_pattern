@@ -19,12 +19,13 @@ interface Strategy {
 
 class WinningStrategy {
     +nextHand()
-    +study()
+    +study(boolean win)
 }
 
 class ProbStrategy {
     +nextHand()
-    +study()
+    +study(boolean win)
+    -getSum(int hv)
 }
 
 class Hand {

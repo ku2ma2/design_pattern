@@ -6,7 +6,6 @@ require_once dirname(__DIR__) . '/Hand.php';
 
 /**
  * Hand Test
- * @todo: toString 文字列変換のテストを追加する
  */
 final class HandTest extends TestCase
 {
