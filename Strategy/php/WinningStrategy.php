@@ -26,12 +26,11 @@ class WinningStrategy implements Strategy
      * またHandオブジェクトを初期化。
      *
      * @access public
-     * @param int $seed 変数シード
+     * @param void
      * @return void
      */
-    public function __construct(int $seed)
+    public function __construct()
     {
-        mt_seed($seed);
         $this->prevHand = Hand::getHand(0); // 前回の手役を初期化
     }
 

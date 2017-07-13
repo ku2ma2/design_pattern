@@ -27,12 +27,11 @@ class ProbStrategy implements Strategy
      * 対戦履歴を初期化している
      *
      * @access public
-     * @param int $seed 変数シード
+     * @param void
      * @return void
      */
-    public function __construct(int $seed)
+    public function __construct()
     {
-        mt_seed($seed);
         $this->history = [
             0 => [0=>1, 1=>1, 2=>1],
             1 => [0=>1, 1=>1, 2=>1],
@@ -57,7 +56,7 @@ class ProbStrategy implements Strategy
         if ($bet < $this->history[$this->currentHandValue][0]) {
             $handvalue = 0;
         } elseif ($bet <
-        $this->history[$this->currentHandValu][0] + $this->history[$this->currentHandValue][1]) {
+        $this->history[$this->currentHandValue][0] + $this->history[$this->currentHandValue][1]) {
             $handvalue = 1;
         } else {
             $handvalue = 2;

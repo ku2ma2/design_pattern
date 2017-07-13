@@ -11,7 +11,7 @@ function usage()
 }
 if (count($argv) != 2) {
     usage();
-    exit(0);
+    exit(1);
 }
 
 if ($argv[1] === "plain") {
