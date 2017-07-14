@@ -15,6 +15,7 @@ abstract class Entry
 
     public function add(Entry $entry)
     {
+        // 未実装
     }
     public function printListRoot()
     {
@@ -22,7 +23,7 @@ abstract class Entry
     }
     abstract protected function printList(string $prefix);
 
-    public function toStrong()
+    public function toString()
     {
         return $this->getName() . " ({$this->getSize()})";
     }
