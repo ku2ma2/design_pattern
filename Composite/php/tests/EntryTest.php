@@ -13,9 +13,9 @@ final class EntryTest extends TestCase
     {
         $stub = $this->getMockForAbstractClass(Entry::class);
 
-        $stub->expects($this->any())
-             ->method('getName')
-             ->will($this->returnValue('/path/to/example.txt'));
+        $stub->expects($this->any()) // 呼び出し回数指定(anyはいつでも)
+             ->method('getName') // メソッドの指定
+             ->will($this->returnValue('/path/to/example.txt')); // メソッドが返すであろう値
 
         $stub->expects($this->any())
              ->method('getSize')
