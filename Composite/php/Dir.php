@@ -62,12 +62,28 @@ class Dir extends Entry
     public function getSize()
     {
         $size = 0;
-        
+
+        $this->directory->rewind(); // カーソルを初期化
+
         while ($this->directory->hasNext()) {
             $entry = $this->directory->next();
             $size += $entry->getSize();
         }
+
         return $size;
+    }
+
+    /**
+     * ディレクトリ追加
+     *
+     * @access public
+     * @param Entry $entry 追加するディレクトリ
+     * @return Dir 自分自身
+     */
+    public function add(Entry $entry)
+    {
+        $this->directory->add($entry);
+        return $this;
     }
 
     /**
@@ -75,12 +91,20 @@ class Dir extends Entry
      *
      * 与えられたパスとファイル名を出力する
      *
-     * @access protected
+     * @access public
      * @param string $prefix ファイルパス(prefix)
      * @return void
      */
-    protected function printList(string $prefix)
+    public function printList(string $prefix = '')
     {
         echo "{$prefix}/{$this->toString()}\n";
+
+        $this->directory->rewind(); // カーソルを初期化
+
+       // printListが再帰的に呼び出される
+        while ($this->directory->hasNext()) {
+            $entry = $this->directory->next();
+            $entry->printList($prefix."/".$this->name);
+        }
     }
 }
