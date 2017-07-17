@@ -17,10 +17,7 @@ abstract class Entry
     {
         // 未実装
     }
-    public function printListRoot()
-    {
-        $this->printList("");
-    }
+
     abstract protected function printList(string $prefix);
 
     public function toString()
