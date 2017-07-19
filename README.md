@@ -12,6 +12,7 @@
 - [\[php\] デザインパターン練習 Facotry Method](https://ku2ma2.github.io/design_pattern/2017/06/20/php-factory.html)
 - [\[php\] デザインパターン練習 Singleton](https://ku2ma2.github.io/design_pattern/2017/06/30/php-singleton.html)
 - [\[php\] デザインパターン練習 Prototype](https://ku2ma2.github.io/design_pattern/2017/07/07/php-prototype.html)
+- [\[php\] デザインパターン練習 Builder](https://ku2ma2.github.io/design_pattern/2017/07/17/php-builder.html)
 
 ### PlantUMLメモ
 
