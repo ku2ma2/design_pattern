@@ -27,7 +27,7 @@ final class SideBorderTest extends TestCase
     public function test_getRows_行数は中身の行数と同じ($sideborder)
     {
         $actual = $sideborder->getRows();
-        $expected = 1;
+        $expected = 1; // 一行しかないので1
 
         $this->assertEquals($actual, $expected);
 
