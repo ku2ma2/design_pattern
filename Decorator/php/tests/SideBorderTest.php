@@ -42,5 +42,16 @@ final class SideBorderTest extends TestCase
         $expected = '*Hello, World.*';
 
         $this->assertEquals($actual, $expected);
+        return $sideborder;
+    }
+    /**
+     * @depends test_getRowText_中身の指定業の両側に飾り文字をつけたもの
+     */
+    public function test_show_出来上がったテキストの表示($sideborder)
+    {
+        $actual = $sideborder->show();
+        $expected = '*Hello, World.*'."\n";
+
+        $this->expectOutputString($expected);
     }
 }
