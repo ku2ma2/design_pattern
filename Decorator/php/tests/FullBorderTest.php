@@ -53,15 +53,18 @@ final class FullBorderTest extends TestCase
         $expected = '|Hello, World.|';
 
         $this->assertEquals($actual, $expected);
+        return $fullborder;
     }
-    // /**
-    //  * @depends test_getRowText_中身の指定業の両側に飾り文字をつけたもの
-    //  */
-    // public function test_show_出来上がったテキストの表示($sideborder)
-    // {
-    //     $actual = $sideborder->show();
-    //     $expected = '*Hello, World.*'."\n";
+    /**
+     * @depends test_getRowText_2行目は中身を表示する
+     */
+    public function test_show_出来上がったテキストの表示($fullborder)
+    {
+        $actual = $fullborder->show();
+        $expected = '+-------------+'."\n";
+        $expected .= '|Hello, World.|'."\n";
+        $expected .= '+-------------+'."\n";
 
-    //     $this->expectOutputString($expected);
-    // }
+        $this->expectOutputString($expected);
+    }
 }
