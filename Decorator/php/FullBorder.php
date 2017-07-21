@@ -70,6 +70,15 @@ class FullBorder extends Border
             return "|". $this->display->getRowText($row - 1) . "|";
         }
     }
+
+    /**
+     * 上下枠線の作成
+     *
+     * @access private
+     * @param string $ch 枠線に使う文字
+     * @param int $count 枠線の文字数
+     * @return string $buf 最終的な枠線
+     */
     private function makeLine(string $ch, int $count)
     {
         $buf = "";
