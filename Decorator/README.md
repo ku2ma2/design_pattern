@@ -1,4 +1,4 @@
-# Composite パターン
+# Decorator パターン
 
 
 ```uml
