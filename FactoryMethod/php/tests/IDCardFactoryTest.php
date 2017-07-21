@@ -5,16 +5,17 @@ use PHPUnit\Framework\TestCase as TestCase;
 require_once dirname(__DIR__) . '/IDCardFactory.php';
 
 /**
- * IDCardFactory Test
+ * FactoryMethod IDCardFactory Test
  */
-final class IDCardFactoryTest extends TestCase
+final class FactoryMethodIDCardFactoryTest extends TestCase
 {
     public function testCreate()
     {
-        $idcard = new \idcard\IDCardFactory;
-
-        $card = $idcard->create('山田一郎');
         $expected = '山田一郎のカードを作ります。'."\n";
+
+        $idcard = new \idcard\IDCardFactory;
+        $card = $idcard->create('山田一郎');
+
         $this->expectOutputString($expected);
 
         return $card;
@@ -24,8 +25,9 @@ final class IDCardFactoryTest extends TestCase
      */
     public function testUse($card)
     {
-        $card->use();
         $expected = '山田一郎のカードを使います。'."\n";
+
+        $card->use();
         $this->expectOutputString($expected);
     }
 }

@@ -5,18 +5,18 @@ use PHPUnit\Framework\TestCase as TestCase;
 require_once dirname(__DIR__) . '/listfactory/ListLink.php';
 
 /**
- * ListLink Test
+ * AbstractFactory ListLink Test
  */
-final class ListLinkTest extends TestCase
+final class AbstractFactoryListLinkTest extends TestCase
 {
     public function testCreate()
     {
-        $link = new \listfactory\ListLink($caption = 'キャプション', $url = 'http://example.com');
-
         $expected = '';
         $expected .= '<li>';
         $expected .= '<a href="http://example.com">キャプション</a>';
         $expected .= '</li>'."\n";
+
+        $link = new \listfactory\ListLink($caption = 'キャプション', $url = 'http://example.com');
 
         $this->assertEquals($expected, $link->makeHTML());
     }

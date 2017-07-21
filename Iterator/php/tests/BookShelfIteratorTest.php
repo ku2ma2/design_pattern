@@ -5,12 +5,14 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/BookShelfIterator.php';
 
 /**
- * BookShelf Test
+ * Iterator BookShelf Test
  */
-final class BookShelfIteratorTest extends TestCase
+final class IteratorBookShelfIteratorTest extends TestCase
 {
     public function testConstruct()
     {
+        $expected = true;
+
         // 今回は３冊の本棚を作成する
         $bookShelf = new BookShelf();
         $bookShelf->appendBook(new Book("book1"));
@@ -18,7 +20,7 @@ final class BookShelfIteratorTest extends TestCase
         $bookShelf->appendBook(new Book("book3"));
 
         $it = $bookShelf->iterator();
-        $this->assertEquals(is_object($it), true);
+        $this->assertEquals($expected, is_object($it));
 
         return $it;
     }
@@ -27,13 +29,15 @@ final class BookShelfIteratorTest extends TestCase
      */
     public function testNext($it)
     {
+        $expected = "book1";
         $book = $it->next();
         $this->assertEquals(is_object($book), true);
-        $this->assertEquals($book->getName(), 'book1');
+        $this->assertEquals($expected, $book->getName());
 
+        $expected = "book2";
         $book = $it->next();
         $this->assertEquals(is_object($book), true);
-        $this->assertEquals($book->getName(), 'book2');
+        $this->assertEquals($expected, $book->getName());
 
         return $it;
     }
@@ -42,9 +46,11 @@ final class BookShelfIteratorTest extends TestCase
      */
     public function testHasNext($it)
     {
-        $this->assertEquals($it->hasNext(), true);
+        $expected = true;
+        $this->assertEquals($expected, $it->hasNext());
         $book = $it->next();
         // 最終的にはFalseになる
-        $this->assertEquals($it->hasNext(), false);
+        $expected = false;
+        $this->assertEquals($expected, $it->hasNext());
     }
 }

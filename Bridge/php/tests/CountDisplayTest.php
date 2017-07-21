@@ -6,19 +6,19 @@ require_once dirname(__DIR__) . '/CountDisplay.php';
 require_once dirname(__DIR__) . '/StringDisplayImpl.php';
 
 /**
- * CountDisplayTest
+ * Bridge CountDisplayTest
  */
-final class CountDisplayTest extends TestCase
+final class BridgeCountDisplayTest extends TestCase
 {
     public function test_StringDisplayImpleを使って枠線を引く()
     {
-        $disp = new CountDisplay(new StringDisplayImpl("Hello, Japan."));
-        $disp->display();
-
         $expected = "";
         $expected .= "+-------------+\n";
         $expected .= "|Hello, Japan.|\n";
         $expected .= "+-------------+\n";
+
+        $disp = new CountDisplay(new StringDisplayImpl("Hello, Japan."));
+        $disp->display();
 
         $this->expectOutputString($expected);
 
@@ -29,8 +29,6 @@ final class CountDisplayTest extends TestCase
      */
     public function test_multiDisplayで５回繰り返して文字列を枠線内に出力($disp)
     {
-        $disp->multiDisplay(5);
-
         $expected = "";
         $expected .= "+-------------+\n";
         $expected .= "|Hello, Japan.|\n";
@@ -39,6 +37,8 @@ final class CountDisplayTest extends TestCase
         $expected .= "|Hello, Japan.|\n";
         $expected .= "|Hello, Japan.|\n";
         $expected .= "+-------------+\n";
+
+        $disp->multiDisplay(5);
 
         $this->expectOutputString($expected);
 

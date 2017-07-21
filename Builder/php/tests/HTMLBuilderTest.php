@@ -5,57 +5,58 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/HTMLBuilder.php';
 
 /**
- * HTMLBuilder Test
+ * Builder HTMLBuilder Test
  */
-final class HTMLBuilderTest extends TestCase
+final class BuilderHTMLBuilderTest extends TestCase
 {
     public function testMakeTitleCheckfilename()
     {
+        $expected = 'Greeting.html';
+
         $builder = new HTMLBuilder();
         $builder->makeTitle('Greeting');
 
-        $expected = 'Greeting.html';
         
-        $this->assertEquals($builder->getResult(), $expected);
+        $this->assertEquals($expected, $builder->getResult());
     }
 
     public function testMakeTitle()
     {
-        $builder = new HTMLBuilder();
-        $builder->makeTitle('Greeting');
-
         $expected = '<html><head><title>Greeting</title></head><body>'."\n";
         $expected .= '<h1>Greeting</h1>'."\n";
         
-        $this->assertEquals($builder->getBuffer(), $expected);
+        $builder = new HTMLBuilder();
+        $builder->makeTitle('Greeting');
+
+        $this->assertEquals($expected, $builder->getBuffer());
         return $builder;
     }
 
     public function testMakeString()
     {
+        $expected = '<p>お昼にかけて</p>'."\n";
+
         $builder = new HTMLBuilder();
         $builder->makeString('お昼にかけて');
-
-        $expected = '<p>お昼にかけて</p>'."\n";
         
-        $this->assertEquals($builder->getBuffer(), $expected);
+        $this->assertEquals($expected, $builder->getBuffer());
     }
 
     public function testMakeItems()
     {
+        $expected = "<ul>\n";
+        $expected .= "<li>おはようございます</li>\n";
+        $expected .= "<li>いつもお世話になっております</li>\n";
+        $expected .= "</ul>\n";
+
         $items = [];
         $items[] = 'おはようございます';
         $items[] = 'いつもお世話になっております';
 
         $builder = new HTMLBuilder();
         $builder->makeItems($items);
-
-        $expected = "<ul>\n";
-        $expected .= "<li>おはようございます</li>\n";
-        $expected .= "<li>いつもお世話になっております</li>\n";
-        $expected .= "</ul>\n";
         
-        $this->assertEquals($builder->getBuffer(), $expected);
+        $this->assertEquals($expected, $builder->getBuffer());
     }
 
     /**
@@ -63,11 +64,12 @@ final class HTMLBuilderTest extends TestCase
      */
     public function testClose($builder)
     {
-        $builder->close();
-
         $expected = '<html><head><title>Greeting</title></head><body>'."\n";
         $expected .= '<h1>Greeting</h1>'."\n";
         $expected .= "</body></html>\n";
+
+        $builder->close();
+
         $this->expectOutputString($expected);
     }
 }

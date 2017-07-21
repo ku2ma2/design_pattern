@@ -7,12 +7,15 @@ require_once dirname(__DIR__) . '/UnderlinePen.php';
 require_once dirname(__DIR__) . '/MessageBox.php';
 
 /**
- * Manager Test
+ * Prototype Manager Test
  */
-final class ManegerTest extends TestCase
+final class PrototypeManegerTest extends TestCase
 {
     public function testUndelineTest()
     {
+        $expected = "\"Hello, world.\"\n";
+        $expected .= "~~~~~~~~~~~~~\n";
+
         $manager = new \prototype\Manager();
 
         // 下線機能をManagerに登録
@@ -22,8 +25,6 @@ final class ManegerTest extends TestCase
 
         $p1->use("Hello, world.");
 
-        $expected = "\"Hello, world.\"\n";
-        $expected .= "~~~~~~~~~~~~~\n";
         $this->expectOutputString($expected);
 
         return $manager;
@@ -33,6 +34,9 @@ final class ManegerTest extends TestCase
      */
     public function testMessageBoxTest($manager)
     {
+        $expected = "*********\n";
+        $expected .= "* Hello *\n";
+        $expected .= "*********\n";
 
         // 枠飾り 機能をManagerに登録
         $mbox = new \prototype\MessageBox('*');
@@ -41,9 +45,6 @@ final class ManegerTest extends TestCase
 
         $p2->use("Hello");
 
-        $expected = "*********\n";
-        $expected .= "* Hello *\n";
-        $expected .= "*********\n";
         $this->expectOutputString($expected);
     }
 }

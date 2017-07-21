@@ -5,15 +5,12 @@ use PHPUnit\Framework\TestCase as TestCase;
 require_once dirname(__DIR__) . '/StringDisplay.php';
 
 /**
- * StringDisplay Test
+ * TemplateMethodStringDisplay Test
  */
-final class StringDisplayTest extends TestCase
+final class TemplateMethodStringDisplayTest extends TestCase
 {
     public function testDisplay()
     {
-        $d = new StringDisplay('Hello, World');
-
-        $d->display();
         $expected = "+------------+\n";
         $expected .= "|Hello, World|\n";
         $expected .= "|Hello, World|\n";
@@ -21,6 +18,10 @@ final class StringDisplayTest extends TestCase
         $expected .= "|Hello, World|\n";
         $expected .= "|Hello, World|\n";
         $expected .= "+------------+\n";
+
+        $d = new StringDisplay('Hello, World');
+        $d->display();
+
         $this->expectOutputString($expected);
     }
 }

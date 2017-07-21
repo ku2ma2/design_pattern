@@ -5,18 +5,20 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/Banner.php';
 
 /**
- * Banner Test
+ * Adapter Banner Test
  */
-final class BannerTest extends TestCase
+final class AdapterBannerTest extends TestCase
 {
     public function testShowWithParen()
     {
+        $expected = "(Banner)";
         $banner = new Banner("Banner");
-        $this->assertEquals($banner->showWithParen(), "(Banner)");
+        $this->assertEquals($expected, $banner->showWithParen());
     }
     public function testShowWithAster()
     {
+        $expected = "*Banner*";
         $banner = new Banner("Banner");
-        $this->assertEquals($banner->showWithAster(), "*Banner*");
+        $this->assertEquals($expected, $banner->showWithAster());
     }
 }

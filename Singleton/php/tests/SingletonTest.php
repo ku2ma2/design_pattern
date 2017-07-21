@@ -5,15 +5,16 @@ use PHPUnit\Framework\TestCase as TestCase;
 require_once dirname(__DIR__) . '/Singleton.php';
 
 /**
- * Singleton Test
+ * Singleton SingletonTest
  */
-final class SingletonTest extends TestCase
+final class SingletonSingletonTest extends TestCase
 {
     public function testGetInstance()
     {
+        $expected = 'インスタンスを生成しました。'."\n";
+
         $obj = Singleton::getInstance();
 
-        $expected = 'インスタンスを生成しました。'."\n";
         $this->expectOutputString($expected);
 
         return $obj;

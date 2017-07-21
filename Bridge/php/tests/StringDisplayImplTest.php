@@ -6,16 +6,17 @@ require_once dirname(__DIR__) . '/StringDisplayImpl.php';
 require_once dirname(__DIR__) . '/DisplayImpl.php';
 
 /**
- * StringDisplayImplTest
+ * Bridge StringDisplayImplTest
  */
-final class StringDisplayImplTest extends TestCase
+final class BridgeStringDisplayImplTest extends TestCase
 {
     public function test_rawOpenで与えられた文字列の長さの枠線を引く()
     {
+        $expected = "+-------------+\n";
+
         $disp = new StringDisplayImpl("Hello, Japan.");
         $disp->rawOpen();
 
-        $expected = "+-------------+\n";
         $this->expectOutputString($expected);
 
         return $disp;
@@ -25,9 +26,10 @@ final class StringDisplayImplTest extends TestCase
      */
     public function test_rawPrintで与えられた文字列の前後に文字を追加して表示($disp)
     {
+        $expected = "|Hello, Japan.|\n";
+
         $disp->rawPrint();
 
-        $expected = "|Hello, Japan.|\n";
         $this->expectOutputString($expected);
 
         return $disp;
@@ -37,9 +39,10 @@ final class StringDisplayImplTest extends TestCase
      */
     public function test_rawCloseで与えられた文字列の長さの枠線を引く($disp)
     {
+        $expected = "+-------------+\n";
+
         $disp->rawClose();
 
-        $expected = "+-------------+\n";
         $this->expectOutputString($expected);
     }
 }
