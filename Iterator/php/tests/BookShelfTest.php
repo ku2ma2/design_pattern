@@ -5,14 +5,15 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/BookShelf.php';
 
 /**
- * BookShelf Test
+ * Iterator BookShelf Test
  */
-final class BookShelfTest extends TestCase
+final class IteratorBookShelfTest extends TestCase
 {
     public function testConstruct()
     {
+        $expected = true;
         $bookShelf = new BookShelf();
-        $this->assertEquals(is_object($bookShelf), true);
+        $this->assertEquals($expected, is_object($bookShelf));
 
         return $bookShelf;
     }
@@ -21,11 +22,13 @@ final class BookShelfTest extends TestCase
      */
     public function testGetLength(BookShelf $bookShelf)
     {
+        $expected = 3;
+
         $bookShelf->appendBook(new Book("book1"));
         $bookShelf->appendBook(new Book("book2"));
         $bookShelf->appendBook(new Book("book3"));
 
-        $this->assertEquals($bookShelf->getLength(), 3);
+        $this->assertEquals($expected, $bookShelf->getLength());
         
         return $bookShelf;
     }
@@ -34,8 +37,9 @@ final class BookShelfTest extends TestCase
      */
     public function testGetBookAt(BookShelf $bookShelf)
     {
+        $expected = "book2";
         $result = $bookShelf->getBookAt(1);
 
-        $this->assertEquals($result->getName(), "book2");
+        $this->assertEquals($expected, $result->getName());
     }
 }

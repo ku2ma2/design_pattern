@@ -6,17 +6,12 @@ require_once dirname(__DIR__) . '/TextBuilder.php';
 require_once dirname(__DIR__) . '/Director.php';
 
 /**
- * Director Test
+ * Builder Director Test
  */
-final class DirectorTest extends TestCase
+final class BuilderDirectorTest extends TestCase
 {
     public function testCunstruct()
     {
-        $textbuilder = new TextBuilder();
-        $director = new Director($textbuilder);
-        $director->construct();
-        $result = $textbuilder->getResult();
-
         $expected = <<<EOT
 ==============================
 『Greeting』
@@ -35,6 +30,13 @@ final class DirectorTest extends TestCase
 ==============================
 
 EOT;
-        $this->assertEquals($result, $expected);
+
+        $textbuilder = new TextBuilder();
+        $director = new Director($textbuilder);
+        $director->construct();
+        $actual = $textbuilder->getResult();
+
+
+        $this->assertEquals($expected, $actual);
     }
 }

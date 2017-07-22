@@ -5,9 +5,9 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/Hand.php';
 
 /**
- * Hand Test
+ * Strategy Hand Test
  */
-final class HandTest extends TestCase
+final class StrategyHandTest extends TestCase
 {
     public function test_同じグーで生成されたインスタンスは同じものである()
     {

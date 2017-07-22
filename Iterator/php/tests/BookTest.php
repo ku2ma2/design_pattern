@@ -5,14 +5,15 @@ use PHPUnit\Framework\TestCase;
 require_once dirname(__DIR__) . '/Book.php';
 
 /**
- * Book Test
+ * Iterator Book Test
  */
-final class BookTest extends TestCase
+final class IteratorBookTest extends TestCase
 {
     public function testGetName()
     {
+        $expected = "book1";
         $book = new Book("book1");
 
-        $this->assertEquals($book->getName(), "book1");
+        $this->assertEquals($expected, $book->getName());
     }
 }

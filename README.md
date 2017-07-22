@@ -13,6 +13,10 @@
 - [\[php\] デザインパターン練習 Singleton](https://ku2ma2.github.io/design_pattern/2017/06/30/php-singleton.html)
 - [\[php\] デザインパターン練習 Prototype](https://ku2ma2.github.io/design_pattern/2017/07/07/php-prototype.html)
 - [\[php\] デザインパターン練習 Builder](https://ku2ma2.github.io/design_pattern/2017/07/17/php-builder.html)
+- [\[php\] デザインパターン練習 Abstract Factory](https://ku2ma2.github.io/design_pattern/2017/07/20/php-abstract-factory.html)
+- [\[php\] デザインパターン練習 Bridge](https://ku2ma2.github.io/design_pattern/2017/07/21/php-bridge.html)
+- [\[php\] デザインパターン練習 Strategy](https://ku2ma2.github.io/design_pattern/2017/07/22/php-strategy.html)
+
 
 ### PlantUMLメモ
 

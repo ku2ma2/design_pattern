@@ -7,20 +7,21 @@ require_once dirname(__DIR__) . '/WinningStrategy.php';
 require_once dirname(__DIR__) . '/ProbStrategy.php';
 
 /**
- * Player Test
+ * Strategy Player Test
  */
-final class PlayerTest extends TestCase
+final class StrategyPlayerTest extends TestCase
 {
     public function test_WinningStrategy_勝った場合は勝ち数が1つ増える()
     {
+        $expected = "[Taro:1 games, 1 win, 0 lose]";
+
         $player = new Player("Taro", new WinningStrategy());
         $hand = $player->nextHand();
         $player->win();
 
-        $expect = "[Taro:1 games, 1 win, 0 lose]";
         $actual = $player->toString();
 
-        $this->assertEquals($actual, $expect);
+        $this->assertEquals($expected, $actual);
         return $player;
     }
     /**
@@ -28,13 +29,13 @@ final class PlayerTest extends TestCase
      */
     public function test_WinningStrategy_負けた場合は負けが1つ増える($player)
     {
+        $expected = "[Taro:2 games, 1 win, 1 lose]";
+
         $hand = $player->nextHand();
         $player->lose();
 
-        $expect = "[Taro:2 games, 1 win, 1 lose]";
         $actual = $player->toString();
 
-        $this->assertEquals($actual, $expect);
-        return $player;
+        $this->assertEquals($expected, $actual);
     }
 }
