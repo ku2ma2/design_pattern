@@ -62,7 +62,7 @@ Main -up-> Directory :Uses
 
 | 名前 | 解説 |
 |:----|:----|
-| Visitor | ファイルやディレクトリを訪れる訪問者を表す抽象 |
+| Visitor | ファイルやディレクトリを訪れる訪問者を表す抽象クラス |
 | Element | Visitorクラスのインスタンスを受け入れるデータ構造を表すインターフェース |
 | ListVisitor | Vistorクラスのサブクラスで、ファイルやディレクトリの一覧を表示するクラス |
 | Entry | FileとDirectoryのスーパークラスとなる抽象クラス(Acceptorインターフェースを実装) |
