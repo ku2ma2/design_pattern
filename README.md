@@ -16,7 +16,7 @@
 - [\[php\] デザインパターン練習 Abstract Factory](https://ku2ma2.github.io/design_pattern/2017/07/20/php-abstract-factory.html)
 - [\[php\] デザインパターン練習 Bridge](https://ku2ma2.github.io/design_pattern/2017/07/21/php-bridge.html)
 - [\[php\] デザインパターン練習 Strategy](https://ku2ma2.github.io/design_pattern/2017/07/22/php-strategy.html)
-
+- [\[php\] デザインパターン練習 Composite](https://ku2ma2.github.io/design_pattern/2017/07/23/php-composite.html)
 
 ### PlantUMLメモ
 
