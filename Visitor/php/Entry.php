@@ -19,7 +19,7 @@ abstract class Entry implements \Visitor\Element
 {
     abstract public function getName();
     abstract public function getSize();
-    public function add($entry)
+    public function add(\Visitor\Entry $entry)
     {
         // 未実装
     }

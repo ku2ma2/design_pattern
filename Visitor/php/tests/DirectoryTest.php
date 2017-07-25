@@ -20,39 +20,34 @@ final class VisitorDirectoryTest extends TestCase
         $this->assertEquals($expected, $actual);
         return $dir;
     }
-    // /**
-    //  * @depends test_getName_名前を設定したら同じ名前を返す
-    //  */
-    // public function test_getSize_何も下位にない場合はサイズは0($dir)
-    // {
-    //     $expected = 0;
+    /**
+     * @depends test_getName_名前を設定したら同じ名前を返す
+     */
+    public function test_getSize_何も下位にない場合はサイズは0($dir)
+    {
+        $expected = 0;
+        $actual = $dir->getSize();
 
-    //     $actual = $dir->getSize();
+        $this->assertEquals($expected, $actual);
+        return $dir;
+    }
 
-    //     $this->assertEquals($expected, $actual);
-    //     return $dir;
-    // }
+    public function test_getSize_ファイルとディレクトリを追加してサイズを取得する()
+    {
+        $expected = 30000;
 
-    // public function test_ファイルとディレクトリを追加して結果表示する()
-    // {
-    //     $expected = '/root (30000)'."\n";
-    //     $expected .= '/root/bin (30000)'."\n";
-    //     $expected .= '/root/bin/vi (10000)'."\n";
-    //     $expected .= '/root/bin/latex (20000)'."\n";
-    //     $expected .= '/root/tmp (0)'."\n";
+        $rootdir = new \Visitor\Directory("root");
+        $bindir = new \Visitor\Directory("bin");
+        $tmpdir = new \Visitor\Directory("tmp");
 
-    //     $rootdir = new Dir("root");
-    //     $bindir = new Dir("bin");
-    //     $tmpdir = new Dir("tmp");
+        $rootdir->add($bindir);
+        $rootdir->add($tmpdir);
 
-    //     $rootdir->add($bindir);
-    //     $rootdir->add($tmpdir);
+        $bindir->add(new \Visitor\File("vi", 10000));
+        $bindir->add(new \Visitor\File("latex", 20000));
 
-    //     $bindir->add(new File("vi", 10000));
-    //     $bindir->add(new File("latex", 20000));
+        $actual = $rootdir->getSize();
 
-    //     $rootdir->printList();
-
-    //     $this->expectOutputString($expected);
-    // }
+        $this->assertEquals($expected, $actual);
+    }
 }
