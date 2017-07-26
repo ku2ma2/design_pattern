@@ -23,10 +23,6 @@ abstract class Entry implements \Visitor\Element
     {
         // 未実装
     }
-    public function iterator()
-    {
-        // 未実装
-    }
     public function toString()
     {
         return getName() ." (".getSize().")";
