@@ -2,7 +2,7 @@
 
 namespace Visitor;
 
-require_once __DIR__ . "/Visitor.php";
+require_once __DIR__ . "/ListVisitor.php";
 
 /**
  * Visitorクラスのインスタンスを受け入れるデータ構造を表すインターフェース
@@ -14,5 +14,5 @@ require_once __DIR__ . "/Visitor.php";
  */
 interface Element
 {
-    public function accept(\Visitor\Visitor $v);
+    public function accept(\Visitor\ListVisitor $v);
 }

@@ -3,7 +3,7 @@
 namespace Visitor;
 
 require_once __DIR__ . "/Entry.php";
-require_once __DIR__ . "/Visitor.php";
+require_once __DIR__ . "/ListVisitor.php";
 
 /**
  * ファイルを表すクラス
@@ -30,7 +30,7 @@ class File extends \Visitor\Entry
     {
         return $this->size;
     }
-    public function accept(\Visitor\Visitor $v)
+    public function accept(\Visitor\ListVisitor $v)
     {
         $v->visit($this);
     }
