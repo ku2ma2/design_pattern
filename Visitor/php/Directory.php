@@ -3,11 +3,15 @@
 namespace Visitor;
 
 require_once __DIR__ . "/Entry.php";
-require_once __DIR__ . "/Visitor.php";
+require_once __DIR__ . "/ListVisitor.php";
 require_once __DIR__ . "/DirectoryEntry.php";
 
 /**
  * ファイルを表すクラス
+ *
+ * addやacceptでは本来ListVisitorを抽象化したVisitorを
+ * 使ってタイプヒンティングする必要があるが、PHPのオーバーローディング
+ * の問題があるのでListVistorを使っている。
  *
  * @access public
  * @extends \Visitor\Entry
@@ -51,7 +55,7 @@ class Directory extends \Visitor\Entry
         $this->dir->add($entry);
         return $this;
     }
-    public function accept(\Visitor\Visitor $v)
+    public function accept(\Visitor\ListVisitor $v)
     {
         $v->visit($this);
     }
