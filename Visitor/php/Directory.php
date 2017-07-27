@@ -43,6 +43,10 @@ class Directory extends \Visitor\Entry
         }
         return $size;
     }
+    public function iterator()
+    {
+        return $this->dir;
+    }
     /**
      * ディレクトリ追加
      *

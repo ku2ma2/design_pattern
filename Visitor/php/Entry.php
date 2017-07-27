@@ -23,8 +23,9 @@ abstract class Entry implements \Visitor\Element
     {
         // 未実装
     }
+    // http://php.net/manual/ja/language.oop5.magic.php#object.tostring
     public function __toString()
     {
-        return getName() ." (".getSize().")";
+        return $this->getName() ." (".$this->getSize().")";
     }
 }
