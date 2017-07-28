@@ -13,7 +13,7 @@ final class VisitorFileTest extends TestCase
     {
         $expected = 'example.txt';
 
-        $file = new File($name = 'example.txt', $size = 1000);
+        $file = new \Visitor\File($name = 'example.txt', $size = 1000);
         $actual = $file->getName();
 
         $this->assertEquals($expected, $actual);

@@ -36,10 +36,22 @@ class ListVisitor
     }
     private function visitFile(\Visitor\File $file)
     {
-        echo "File\n";
+        echo "{$this->currentdir}/{$file}\n";
     }
     private function visitDirectory(\Visitor\Directory $directory)
     {
-        echo "Directory\n";
+        echo "{$this->currentdir}/{$directory}\n";
+
+        $savedir = $this->currentdir; // 一時的にディレクトリ名を保存
+        $this->currentdir .= "/{$directory->getName()}";
+
+        $it = $directory->iterator(); // iteratorオブジェクトを取得
+        $it->rewind(); // カーソルを初期化
+
+        while ($it->hasNext()) {
+            $entry = $it->next();
+            $entry->accept($this); // ここが全然わからん
+        }
+        $this->currentdir = $savedir;
     }
 }
