@@ -2,6 +2,9 @@
 
 namespace Visitor;
 
+require_once __DIR__."/Directory.php";
+require_once __DIR__."/File.php";
+
 /**
  * Visitorクラスのインスタンスを受け入れるデータ構造を表すインターフェース
  *
@@ -12,5 +15,5 @@ namespace Visitor;
  */
 abstract class Visitor
 {
-    abstract public function visit($entry);
+    abstract public function __call(string $func, array $arg);
 }

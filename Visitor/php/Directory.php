@@ -23,15 +23,38 @@ class Directory extends \Visitor\Entry
     private $name;
     private $dir;
 
+    /**
+     * コンストラクタ
+     *
+     * @access public
+     * @param string $name ディレクトリ名
+     * @return void
+     */
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->dir = new \Visitor\DirectoryEntry();
     }
+
+    /**
+     * ディレクトリ名取得
+     *
+     * @access public
+     * @param void
+     * @return string $this->name
+     */
     public function getName()
     {
         return $this->name;
     }
+
+    /**
+     * ディレクトリサイズ取得
+     *
+     * @access public
+     * @param void
+     * @return int $size
+     */
     public function getSize()
     {
         $size = 0;
@@ -43,6 +66,14 @@ class Directory extends \Visitor\Entry
         }
         return $size;
     }
+
+    /**
+     * 内部に保存されているイテレーター取得
+     *
+     * @access public
+     * @param void
+     * @return object $this->dir
+     */
     public function iterator()
     {
         return $this->dir;
@@ -59,6 +90,15 @@ class Directory extends \Visitor\Entry
         $this->dir->add($entry);
         return $this;
     }
+    /**
+     * Visitor受け入れ関数
+     *
+     * ここでVisitorを受け入れてVisitor側の処理に移譲している。
+     *
+     * @access public
+     * @param \Visitor\ListVisitor $v
+     * @return void
+     */
     public function accept(\Visitor\ListVisitor $v)
     {
         $v->visit($this);

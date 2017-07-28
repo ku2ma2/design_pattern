@@ -7,9 +7,6 @@ require_once __DIR__ . "/Element.php";
 /**
  * ファイルやディレクトリを訪れる訪問者を表す抽象クラス
  *
- * PHPではオーバーロードはサポートされていないので
- * ここはひとつの関数で対応することにする。
- *
  * @access public
  * @abstract
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
@@ -23,7 +20,15 @@ abstract class Entry implements \Visitor\Element
     {
         // 未実装
     }
-    // http://php.net/manual/ja/language.oop5.magic.php#object.tostring
+
+    /**
+     * 文字列としてインスタンスを返す
+     *
+     * @access public
+     * @param void
+     * @return string
+     * @see http://php.net/manual/ja/language.oop5.magic.php#object.tostring
+     */
     public function __toString()
     {
         return $this->getName() ." (".$this->getSize().")";
