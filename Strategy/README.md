@@ -56,3 +56,5 @@ ProbStrategy .up.|> Strategy
 
 @enduml
 ```
+
+- [\[php\] デザインパターン練習 Strategy](https://ku2ma2.github.io/design_pattern/2017/07/22/php-strategy.html)

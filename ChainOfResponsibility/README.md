@@ -1,4 +1,4 @@
-# Visitor パターン
+# Chain Of Responsibility パターン
 
 
 ```uml

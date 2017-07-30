@@ -42,3 +42,5 @@ Book o-up- BookShelf
 
 @enduml
 ```
+
+- [\[php\] デザインパターン練習 Iterator](https://ku2ma2.github.io/design_pattern/2017/05/30/php-iterator.html)
