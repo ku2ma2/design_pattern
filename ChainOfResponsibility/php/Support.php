@@ -27,12 +27,27 @@ abstract class Support
         $this->name = $name;
     }
 
+    /**
+     * たらい回し先を設定
+     *
+     * @access public
+     * @param Support $next 次のたらい回し先
+     * @return Support $this->next
+     */
     public function setNext(Support $next)
     {
         $this->next = $next;
         return $this->next;
     }
 
+    /**
+     * トラブル解決の手順の選択
+     *
+     * @final
+     * @access public
+     * @param Trouble $trouble トラブルインスタンス
+     * @return void
+     */
     final public function support(Trouble $trouble)
     {
         if ($this->resolve($trouble)) {
@@ -44,13 +59,35 @@ abstract class Support
         }
     }
 
+    /**
+     * 解決手段の規定
+     *
+     * @abstract
+     * @access protected
+     * @param Trouble $trouble トラブルインスタンス
+     * @return void
+     */
     abstract protected function resolve(Trouble $trouble);
 
+    /**
+     * 解決時処理
+     *
+     * @access protected
+     * @param Trouble $trouble トラブルインスタンス
+     * @return void
+     */
     protected function done(Trouble $trouble)
     {
         echo "{$touble} is resolved by {$this}.\n";
     }
 
+    /**
+     * 未解決時の処理
+     *
+     * @access protected
+     * @param Trouble $trouble トラブルインスタンス
+     * @return void
+     */
     protected function fail(Trouble $trouble)
     {
         echo "{$touble} cannot be resolved.\n";
