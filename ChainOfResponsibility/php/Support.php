@@ -13,7 +13,7 @@ namespace ChainOfResponsiblity;
 abstract class Support
 {
     private $name;
-    private $next;
+    private $next = null;
 
     /**
      * コンストラクタ
@@ -27,6 +27,34 @@ abstract class Support
         $this->name = $name;
     }
 
+    public function setNext(Support $next)
+    {
+        $this->next = $next;
+        return $this->next;
+    }
+
+    final public function support(Trouble $trouble)
+    {
+        if ($this->resolve($trouble)) {
+            $this->done($trouble);
+        } elseif ($this->next != null) {
+            $this->next->support($trouble);
+        } else {
+            $this->fail($trouble);
+        }
+    }
+
+    abstract protected function resolve(Trouble $trouble);
+
+    protected function done(Trouble $trouble)
+    {
+        echo "{$touble} is resolved by {$this}.\n";
+    }
+
+    protected function fail(Trouble $trouble)
+    {
+        echo "{$touble} cannot be resolved.\n";
+    }
 
     /**
      * クラスの文字列表現
