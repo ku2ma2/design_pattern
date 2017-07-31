@@ -6,7 +6,6 @@ namespace ChainOfResponsiblity;
  * 発生したトラブルを表すクラス、トラブル番号(number)を持つ
  *
  * @access public
- * @extends \Visitor\Entry
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
