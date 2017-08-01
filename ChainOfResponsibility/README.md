@@ -11,9 +11,12 @@ class Main {
 abstract Support {
     -name
     -next
-    {abstract} +support()
-    {abstract} +setNext()
-    #resolve()
+    +Support(String name)
+    {abstract} +support(Trouble trouble)
+    {abstract} +setNext(Support next)
+    {abstract} #resolve(Trouble trouble)
+    #done(Trouble trouble)
+    #fail(Trouble trouble)
 }
 
 class NoSupport {
