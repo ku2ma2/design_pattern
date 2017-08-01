@@ -4,56 +4,47 @@
 ```uml
 @startuml
 
-abstract Visitor {
-    {abstract} +visit(File)
-    {abstract} +visit(Directory)
+class Main {
+
 }
 
-class ListVisitor {
-    +currentdir
-    +visit(File)
-    +visit(Directory)
+abstract Support {
+    -name
+    -next
+    +Support(String name)
+    {abstract} +support(Trouble trouble)
+    {abstract} +setNext(Support next)
+    {abstract} #resolve(Trouble trouble)
+    #done(Trouble trouble)
+    #fail(Trouble trouble)
 }
 
-interface Element {
-    +accept
+class NoSupport {
+    #resolve()
 }
 
-abstract Entry {
-    {abstract} +getName()
-    {abstract} +getSize()
-    +add()
-    +iterator()
+class LimitSupport {
+    -limit
+    #resolve()
 }
 
-class File {
-    +name
-    +size
-    +accept()
-    +getName()
-    +getSize()
+class OddSupport {
+    #resolve()
 }
 
-class Directory {
-    +name
-    +dir
-    +accept()
-    +getName()
-    +getSize()
-    +add()
-    +iterator()
+class SpecialSupport {
+    -number
+    #resolve()
 }
 
-ListVisitor -up-|> Visitor
-Main -up-> ListVisitor :Uses
 
-Entry .up.|> Element
-File -up-|> Entry
-Directory -up-|> Entry
-Directory o-up-> Entry
+Main -right-> Support :Request
+Support o-up-|> Support
 
-Main -up-> File :Uses
-Main -up-> Directory :Uses
+NoSupport -up-|> Support
+LimitSupport -up-|> Support
+OddSupport -up-|> Support
+SpecialSupport -up-|> Support
 
 
 @enduml
@@ -62,12 +53,11 @@ Main -up-> Directory :Uses
 
 | 名前 | 解説 |
 |:----|:----|
-| Visitor | ファイルやディレクトリを訪れる訪問者を表す抽象クラス |
-| Element | Visitorクラスのインスタンスを受け入れるデータ構造を表すインターフェース |
-| ListVisitor | Vistorクラスのサブクラスで、ファイルやディレクトリの一覧を表示するクラス |
-| Entry | FileとDirectoryのスーパークラスとなる抽象クラス(Acceptorインターフェースを実装) |
-| File | ファイルを表すクラス |
-| Directory | ディレクトリを表すクラス |
-| FileTreatmentException | Fileに対してAddした場合に発生する例外クラス |
-| Main | 動作テスト用のクラス |
+| Trouble | 発生したトラブルを表すクラス、トラブル番号(number)を持つ |
+| Support | トラブルを解決する抽象クラス |
+| NoSupport | トラブルを解決する具象クラス(常に「解決しない」) |
+| LimitSupport | トラブルを解決する具象クラス(指定した番号未満のトラブルを解決) |
+| OddSupport | トラブルを解決する具象クラス(奇数番号のトラブルを解決) |
+| SpecialSupport | トラブルを解決する具象クラス(指定番号のトラブルを解決) |
+| Main | Supportたちの連鎖を作り、トラブルを起こす動作テスト用のクラス |
 

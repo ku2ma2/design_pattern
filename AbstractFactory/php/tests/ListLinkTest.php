@@ -9,7 +9,7 @@ require_once dirname(__DIR__) . '/listfactory/ListLink.php';
  */
 final class AbstractFactoryListLinkTest extends TestCase
 {
-    public function testCreate()
+    public function test_makeHTMLでフォーマット化されたHTMLを返す()
     {
         $expected = '';
         $expected .= '<li>';
