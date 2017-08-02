@@ -1,6 +1,6 @@
 <?php
 
-namespace ChainOfResponsiblity;
+namespace ChainOfResponsibility;
 
 require_once __DIR__ . "/Support.php";
 

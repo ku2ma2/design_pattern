@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use \ChainOfResponsiblity as COR;
+use \ChainOfResponsibility as COR;
 
 require_once dirname(__DIR__) . '/NoSupport.php';
 
