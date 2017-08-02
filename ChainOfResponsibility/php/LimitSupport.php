@@ -12,32 +12,39 @@ require_once __DIR__ . "/Support.php";
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class NoSupport extends Support
+class LimitSupport extends Support
 {
+    private $limit;
 
     /**
      * コンストラクタ
      *
      * @access public
      * @param string $name トラブル解決者名
+     * @param int $limit この数字未満であれば解決する
      * @return void
      */
-    public function __construct(string $name)
+    public function __construct(string $name, int $limit)
     {
         parent::__construct($name);
+        $this->limit = $limit;
     }
 
     /**
      * 解決用メソッド
      *
-     * ここでは自分では何もせずに必ず「false」を返す
+     * limit未満であれば解決をする
      *
      * @access protected
      * @param Trouble $trouble トラブルインスタンス
-     * @return bool
+     * @return void
      */
     protected function resolve(Trouble $trouble)
     {
-        return false;
+        if ($trouble->getNumber() < $this->limit) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
