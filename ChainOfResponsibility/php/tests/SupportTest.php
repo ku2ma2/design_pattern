@@ -33,7 +33,7 @@ final class CORSupportTest extends TestCase
         $reflection_class = new \ReflectionClass($stub);
         $method = $reflection_class->getMethod('done');
         $method->setAccessible(true);
-        $method->invoke($stub, $trouble);
+        $method->invoke($stub, $trouble); // メソッドの実行
 
         $this->expectOutputString($expected);
     }
