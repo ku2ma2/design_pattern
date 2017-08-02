@@ -9,16 +9,18 @@ require_once dirname(__DIR__) . '/Banner.php';
  */
 final class AdapterBannerTest extends TestCase
 {
-    public function testShowWithParen()
+    public function test_ShowWithParen_カッコをつけて返す()
     {
         $expected = "(Banner)";
         $banner = new Banner("Banner");
-        $this->assertEquals($expected, $banner->showWithParen());
+        $actual = $banner->showWithParen();
+        $this->assertEquals($expected, $actual);
     }
-    public function testShowWithAster()
+    public function test_ShowWithAster_アスタリスクをつけて返す()
     {
         $expected = "*Banner*";
         $banner = new Banner("Banner");
-        $this->assertEquals($expected, $banner->showWithAster());
+        $actual = $banner->showWithAster();
+        $this->assertEquals($expected, $actual);
     }
 }

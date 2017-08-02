@@ -78,7 +78,7 @@ abstract class Support
      */
     protected function done(Trouble $trouble)
     {
-        echo "{$touble} is resolved by {$this}.\n";
+        echo "{$trouble} is resolved by {$this}.\n";
     }
 
     /**
@@ -90,7 +90,7 @@ abstract class Support
      */
     protected function fail(Trouble $trouble)
     {
-        echo "{$touble} cannot be resolved.\n";
+        echo "{$trouble} cannot be resolved.\n";
     }
 
     /**
