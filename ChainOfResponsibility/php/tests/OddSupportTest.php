@@ -3,20 +3,20 @@
 use PHPUnit\Framework\TestCase;
 use \ChainOfResponsiblity as COR;
 
-require_once dirname(__DIR__) . '/LimitSupport.php';
+require_once dirname(__DIR__) . '/OddSupport.php';
 
 
 /**
- * COR LimitSupport Test
+ * COR OddSupport Test
  */
-final class CORLimitSupportTest extends TestCase
+final class COROddSupportTest extends TestCase
 {
-    public function test_resolve_初期設定5でTrouble番号が5未満ならTRUE()
+    public function test_resolve_Trouble番号が奇数ならTRUE()
     {
         $trouble = new COR\Trouble(3);
 
         // abstract class なのでまずMockを作る
-        $stub = $this->getMockForAbstractClass(COR\LimitSupport::class, ['NoSupport', 5]);
+        $stub = $this->getMockForAbstractClass(COR\OddSupport::class, ['OddSupport']);
 
         // テストメソッドも protectedなので アクセスできるようにする。
         $reflection_class = new \ReflectionClass($stub);
@@ -29,11 +29,11 @@ final class CORLimitSupportTest extends TestCase
         return $stub;
     }
     /**
-     * @depends test_resolve_初期設定5でTrouble番号が5未満ならTRUE
+     * @depends test_resolve_Trouble番号が奇数ならTRUE
      */
-    public function test_resolve_初期設定5でTrouble番号が5以上ならFALSE($stub)
+    public function test_resolve_test_resolve_Trouble番号が偶数ならFALSE($stub)
     {
-        $trouble = new COR\Trouble(13); // 今度は 5以上の 13を入れる
+        $trouble = new COR\Trouble(12); // 今度は偶数を入れる
 
         // テストメソッドも protectedなので アクセスできるようにする。
         $reflection_class = new \ReflectionClass($stub);

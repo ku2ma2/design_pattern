@@ -5,35 +5,32 @@ namespace ChainOfResponsiblity;
 require_once __DIR__ . "/Support.php";
 
 /**
- * トラブルを解決する具象クラス(指定した番号未満のトラブルを解決)
+ * トラブルを解決する具象クラス(奇数番号のトラブルを解決)
  *
  * @access public
  * @extends Support
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class LimitSupport extends Support
+class OddSupport extends Support
 {
-    private $limit;
 
     /**
      * コンストラクタ
      *
      * @access public
      * @param string $name トラブル解決者名
-     * @param int $limit この数字未満であれば解決する
      * @return void
      */
-    public function __construct(string $name, int $limit)
+    public function __construct(string $name)
     {
         parent::__construct($name);
-        $this->limit = $limit;
     }
 
     /**
      * 解決用メソッド
      *
-     * limit未満であれば解決をする
+     * 奇数であれば解決する
      *
      * @access protected
      * @param Trouble $trouble トラブルインスタンス
@@ -41,7 +38,7 @@ class LimitSupport extends Support
      */
     protected function resolve(Trouble $trouble)
     {
-        if ($trouble->getNumber() < $this->limit) {
+        if ($trouble->getNumber() % 2 == 1) {
             return true;
         } else {
             return false;
