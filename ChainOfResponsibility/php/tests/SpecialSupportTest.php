@@ -3,19 +3,18 @@
 use PHPUnit\Framework\TestCase;
 use \ChainOfResponsibility as COR;
 
-require_once dirname(__DIR__) . '/OddSupport.php';
+require_once dirname(__DIR__) . '/SpecialSupport.php';
 
 
 /**
- * COR OddSupport Test
+ * COR SpecialSupport Test
  */
-final class COROddSupportTest extends TestCase
+final class CORSpecialSupportTest extends TestCase
 {
-    public function test_resolve_Trouble番号が奇数ならTRUE()
+    public function test_resolve_設定された特定の番号ならTRUEを返す()
     {
         $trouble = new COR\Trouble(3);
-
-        $stub = new COR\OddSupport('OddSupport');
+        $stub = new COR\SpecialSupport('SpecialSuppot', 3);
 
         // テストメソッドも protectedなので アクセスできるようにする。
         $reflection_class = new \ReflectionClass($stub);
@@ -28,9 +27,9 @@ final class COROddSupportTest extends TestCase
         return $stub;
     }
     /**
-     * @depends test_resolve_Trouble番号が奇数ならTRUE
+     * @depends test_resolve_設定された特定の番号ならTRUEを返す
      */
-    public function test_resolve_test_resolve_Trouble番号が偶数ならFALSE($stub)
+    public function test_resolve_設定されていない番号ならFALSEを返す($stub)
     {
         $trouble = new COR\Trouble(12); // 今度は偶数を入れる
 
