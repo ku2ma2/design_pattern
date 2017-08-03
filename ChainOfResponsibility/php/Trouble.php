@@ -1,6 +1,6 @@
 <?php
 
-namespace ChainOfResponsiblity;
+namespace ChainOfResponsibility;
 
 /**
  * 発生したトラブルを表すクラス、トラブル番号(number)を持つ

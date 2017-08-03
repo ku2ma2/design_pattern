@@ -1,6 +1,6 @@
 <?php
 
-namespace ChainOfResponsiblity;
+namespace ChainOfResponsibility;
 
 /**
  * トラブルを解決する抽象クラス
