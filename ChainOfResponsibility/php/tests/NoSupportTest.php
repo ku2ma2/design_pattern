@@ -16,9 +16,7 @@ final class CORNoSupportTest extends TestCase
         $expected = false;
 
         $trouble = new COR\Trouble(1);
-
-        // abstract class なのでまずMockを作る
-        $stub = $this->getMockForAbstractClass(COR\NoSupport::class, array('NoSupport'));
+        $stub = new COR\NoSupport('NoSupport');
 
         // テストメソッドも protectedなので アクセスできるようにする。
         $reflection_class = new \ReflectionClass($stub);

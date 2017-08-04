@@ -15,8 +15,7 @@ final class CORLimitSupportTest extends TestCase
     {
         $trouble = new COR\Trouble(3);
 
-        // abstract class なのでまずMockを作る
-        $stub = $this->getMockForAbstractClass(COR\LimitSupport::class, ['NoSupport', 5]);
+        $stub = new COR\LimitSupport('NoSupport', 5);
 
         // テストメソッドも protectedなので アクセスできるようにする。
         $reflection_class = new \ReflectionClass($stub);
