@@ -11,13 +11,13 @@ final class FacadeDatabaseTest extends TestCase
 {
     public function test_load_ファイル名を指定すると内容をイコールで分割して返す()
     {
-        $expected = 'Hiroshi Yuki';
-        $disp = new \Decorator\StringDisplay("Hello, World.");
-        $fullborder = new \Decorator\FullBorder($disp);
-        $actual = $fullborder->getColumns();
+        $expected = [
+            'hyuki@hyuki.com' => 'Hiroshi Yuki',
+            'hanako@hyuki.com' => 'Hanako Sato'
+        ];
+        
+        $actual = \Facade\Database::getProperties('testdata');
 
-        $this->assertEquals($expected, $actual);
-
-        return $fullborder;
+        $this->assertEquals($actual, $expected);
     }
 }
