@@ -1,4 +1,4 @@
-# Chain Of Responsibility パターン
+# Facade パターン
 
 
 ```uml
