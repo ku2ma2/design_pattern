@@ -23,6 +23,16 @@ class Database
     {
     }
 
+    /**
+     * プロパティ取得
+     *
+     * JavaのPropertiesクラスが存在しないので配列で代用
+     *
+     * @static
+     * @access public
+     * @param string $dbname データベースファイル名
+     * @return array $result 結果セット
+     */
     public static function getProperties(string $dbname)
     {
         $filename = __DIR__ . '/' . $dbname . '.txt';
