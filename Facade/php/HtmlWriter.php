@@ -16,15 +16,25 @@ class HtmlWriter
     /**
      * コンストラクタ
      *
+     * SplFileObjectを受け取ってクラス変数に
+     *
      * @access public
      * @param void
      * @return void
+     * @see http://php.net/manual/ja/class.splfileobject.php
      */
-    public function __construct(SplFileObject $writer)
+    public function __construct(\SplFileObject $writer)
     {
         $this->writer = $writer;
     }
 
+    /**
+     * タイトル表示を生成する
+     *
+     * @access public
+     * @param string $title タイトル
+     * @return void
+     */
     public function title(string $title)
     {
         try {
@@ -38,6 +48,14 @@ class HtmlWriter
             echo '捕捉した例外: ' . $e->getMessage() . PHP_EOL;
         }
     }
+
+    /**
+     * 段落生成(パラグラフ)
+     *
+     * @access public
+     * @param string $msg 段落内のテキスト
+     * @return void
+     */
     public function paragraph(string $msg)
     {
         try {
@@ -46,6 +64,15 @@ class HtmlWriter
             echo '捕捉した例外: ' . $e->getMessage() . PHP_EOL;
         }
     }
+
+    /**
+     * ハイパーリンクの生成
+     *
+     * @access public
+     * @param string $href URL
+     * @param string $caption リンクテキスト
+     * @return void
+     */
     public function link(string $href, string $caption)
     {
         try {
@@ -55,13 +82,29 @@ class HtmlWriter
         }
     }
 
-    public function mail(string $mailaddr, string $username)
+    /**
+     * メールアドレスリンクの生成
+     *
+     * @access public
+     * @param string $mailaddr メールアドレス
+     * @param string $username 名前
+     * @return void
+     */
+    public function mailto(string $mailaddr, string $username)
     {
         $this->link(
             "mailto:".$mailaddr,
             $username
         );
     }
+
+    /**
+     * 終端処理
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function close()
     {
         try {
