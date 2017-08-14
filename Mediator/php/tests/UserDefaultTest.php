@@ -2,19 +2,19 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once dirname(__DIR__) . '/User.php';
+require_once dirname(__DIR__) . '/UserDefault.php';
 
 
 /**
- * Mediator User Test
+ * Mediator UserDeafult Test
  */
-final class MediatorUserTest extends TestCase
+final class MediatorUserDeafultTest extends TestCase
 {
     public function test_getName_クラス変数に設定された値をそのまま返す()
     {
         $expected = "Tajima";
 
-        $user = new \Mediator\User('Tajima');
+        $user = new \Mediator\UserDefault('Tajima');
         $actual = $user->getName();
 
         $this->assertEquals($expected, $actual);
@@ -23,7 +23,7 @@ final class MediatorUserTest extends TestCase
     {
         $expected = "Tajimaさん => Sasakiさん: こんにちは！\n";
 
-        $user = new \Mediator\User('Sasaki');
+        $user = new \Mediator\UserDefault('Sasaki');
         $user->receiveMessage('Tajima', 'こんにちは！');
 
         $this->expectOutputString($expected);

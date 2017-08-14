@@ -25,7 +25,7 @@ final class BridgeCountDisplayTest extends TestCase
         return $disp;
     }
     /**
-     * @depends test_StringDisplayImpleを使って枠線を引く
+     * @depends test_StringDisplayImple_枠線を引く
      */
     public function test_multiDisplay_５回繰り返して文字列を枠線内に出力($disp)
     {
