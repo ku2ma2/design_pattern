@@ -42,5 +42,5 @@ Directory o-up-> Entry
 | File | Fileを表すクラス |
 | Directory | Directoryを表すクラス |
 | FileTreatmentException | FileにEntryを追加しようとした時に起きる例外クラス |
-| Main | 動作テスト用のクラス |
+| Main | 動作テスト |
 
