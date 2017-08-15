@@ -5,7 +5,7 @@ namespace ChainOfResponsibility;
 require_once __DIR__ . "/Support.php";
 
 /**
- * トラブルを解決する具象クラス(指定した番号未満のトラブルを解決)
+ * トラブル解決する具象クラス(指定した番号未満のトラブルを解決)
  *
  * @access public
  * @extends Support
