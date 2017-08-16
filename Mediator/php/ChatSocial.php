@@ -25,8 +25,12 @@ class ChatSocial implements Chatroom
             printf("%sさんが入室しました\n==============================\n", $name);
         }
     }
-    public function sendMessage(string $from, string $to, string $mssage)
+    public function sendMessage(string $from, string $to, string $message)
     {
-        ;
+        if (array_key_exists($to, $this->users)) {
+            $this->users[$to]->receiveMessage($from, $message);
+        } else {
+            printf("%sさんは入室していないようです。\n------------------------------\n", $to);
+        }
     }
 }

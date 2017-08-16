@@ -51,6 +51,7 @@ class UserDefault implements User
     }
     public function sendMessage(string $to, string $message)
     {
+        $this->chatroom->sendMessage($this->name, $to, $message);
     }
 
     /**
@@ -62,6 +63,6 @@ class UserDefault implements User
      */
     public function receiveMessage(string $from, string $message)
     {
-        printf("%sさん => %sさん: %s\n", $from, $this->getName(), $message);
+        printf("%sさん => %sさん: %s\n------------------------------\n", $from, $this->getName(), $message);
     }
 }
