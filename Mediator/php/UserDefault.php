@@ -43,9 +43,11 @@ class UserDefault implements User
 
     public function setChatroom(Chatroom $chatroom)
     {
+        $this->chatroom = $chatroom;
     }
     public function getChatroom()
     {
+        return $this->chatroom;
     }
     public function sendMessage(string $to, string $message)
     {

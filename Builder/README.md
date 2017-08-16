@@ -54,4 +54,4 @@ HTMLBuilder -up-|> Builder
 | Director | 1つの文章を作るクラス |
 | TextBuilder | プレーンテキスト(普通の文字列)を使って文章を作るクラス |
 | HTMLBuilder | HTMLファイルを使って文章を作るクラス |
-| Main | 動作テスト用のクラス | 
+| Main | 動作テスト | 

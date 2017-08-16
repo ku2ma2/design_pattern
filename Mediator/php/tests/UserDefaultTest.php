@@ -19,6 +19,7 @@ final class MediatorUserDeafultTest extends TestCase
 
         $this->assertEquals($expected, $actual);
     }
+
     public function test_receiveMessage_名前とメッセージを受け取り表示()
     {
         $expected = "Tajimaさん => Sasakiさん: こんにちは！\n";
