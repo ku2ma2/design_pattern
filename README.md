@@ -19,6 +19,7 @@
 - [\[php\] デザインパターン練習 Composite](https://ku2ma2.github.io/design_pattern/2017/07/23/php-composite.html)
 - [\[php\] デザインパターン練習 Decorator](https://ku2ma2.github.io/design_pattern/2017/07/24/php-decorator.html)
 - [\[php\] デザインパターン練習 Visitor](https://ku2ma2.github.io/design_pattern/2017/08/02/php-visitor.html)
+- [\[php\] デザインパターン練習 Chain of Responsibility](https://ku2ma2.github.io/design_pattern/2017/08/12/php-chain-of-responsibility.html)
 
 ### PlantUMLメモ
 
