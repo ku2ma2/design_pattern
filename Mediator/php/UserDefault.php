@@ -12,48 +12,22 @@ require_once __DIR__ . '/Chatroom.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class UserDefault implements User
+class UserDefault extends User
 {
-    private $chatroom;
-    private $name;
 
     /**
-     * コンストラクタ
+     * メッセージ送信
      *
      * @access public
-     * @param int $name ユーザー名
+     * @param string $to 受信者名
+     * @param string $message メッセージ
      * @return void
      */
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * ユーザー名取得
-     *
-     * @access public
-     * @param void
-     * @return string $this->name ユーザー名
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setChatroom(Chatroom $chatroom)
-    {
-        $this->chatroom = $chatroom;
-    }
-    public function getChatroom()
-    {
-        return $this->chatroom;
-    }
     public function sendMessage(string $to, string $message)
     {
         $this->chatroom->sendMessage($this->name, $to, $message);
     }
-
+    
     /**
      * メッセージ受信
      *

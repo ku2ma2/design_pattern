@@ -15,6 +15,13 @@ class ChatSocial implements Chatroom
 {
     private $users = [];
 
+    /**
+     * ログイン
+     *
+     * @access public
+     * @param User $user ユーザーオブジェクト
+     * @return void
+     */
     public function login(User $user)
     {
         $user->setChatroom($this);
@@ -25,6 +32,16 @@ class ChatSocial implements Chatroom
             printf("%sさんが入室しました\n==============================\n", $name);
         }
     }
+
+    /**
+     * メッセージ送信
+     *
+     * @access public
+     * @param string $from 送信者名
+     * @param string $to 受信者名
+     * @param string $message メッセージ本体
+     * @return void
+     */
     public function sendMessage(string $from, string $to, string $message)
     {
         if (array_key_exists($to, $this->users)) {
