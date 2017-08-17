@@ -5,8 +5,12 @@ namespace Mediator;
 require_once __DIR__ . '/Chatroom.php';
 
 /**
- * 発生したトラブルを表すクラス、トラブル番号(number)を持つ
+ * ユーザー抽象クラス
  *
+ * Mediatorパターンとして規定化する部分はこちらに実装している
+ * メッセージ内容のみ具象クラス側に実装をお願いしている。
+ *
+ * @abstract
  * @access public
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2

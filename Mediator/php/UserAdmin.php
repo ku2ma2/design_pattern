@@ -6,14 +6,14 @@ require_once __DIR__ . '/User.php';
 require_once __DIR__ . '/Chatroom.php';
 
 /**
- * 発生したトラブルを表すクラス、トラブル番号(number)を持つ
+ * 管理者ユーザー
  *
  * @access public
  * @extends \Mediator\User
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class UserDefault extends User
+class UserAdmin extends User
 {
 
     /**
