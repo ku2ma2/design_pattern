@@ -26,7 +26,7 @@ class UserAdmin extends User
      */
     public function sendMessage(string $to, string $message)
     {
-        $this->chatroom->sendMessage($this->name, $to, $message);
+        $this->chatroom->sendMessage('[管理者]'. $this->name, $to, $message);
     }
     
     /**
