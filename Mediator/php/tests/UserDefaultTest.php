@@ -22,7 +22,7 @@ final class MediatorUserDeafultTest extends TestCase
 
     public function test_receiveMessage_名前とメッセージを受け取り表示()
     {
-        $expected = "Tajimaさん => Sasakiさん: こんにちは！\n";
+        $expected = "Tajimaさん => Sasakiさん: こんにちは！\n------------------------------\n";
 
         $user = new \Mediator\UserDefault('Sasaki');
         $user->receiveMessage('Tajima', 'こんにちは！');
