@@ -31,6 +31,5 @@ Manager -right-> Product: Uses
 UnderlinePen .up.|> Product
 MessageBox .up.|> Product
 
-
 @enduml
 ```

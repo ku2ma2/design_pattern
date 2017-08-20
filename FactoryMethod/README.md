@@ -47,4 +47,4 @@ IDCard -up-|> Product
 | framework | Factory | メソッドcreateを実装している抽象クラス |
 | idcard | IDCard | メソッドuseを実装しているクラス |
 | idcard | IDCardFactory | メソッドcreateProduct,registerProductを実装しているクラス |
-| 無名 | Main | 動作テスト用のクラス | 
+| - | Main | 動作テスト用のクラス | 
