@@ -1,33 +1,52 @@
-# Mediator パターン
+# Chatroom パターン
 
 
 ```uml
 @startuml
 
-class Mediator {
+interface Chatroom {
+    +login(User user)
+    +sendMessage(string from, string to, string mssage)
 }
 
-class ConcreteMediator {
+class ChatSocial {
+    -array users
+    +login(User $user)
+    +sendMessage(string from, string to, string message)
+
 }
 
-class Colleague {
+abstract User {
+    #chatroom;
+    #name;
+    +User(string name)
+    +getName()
+    +setChatroom(Chatroom chatroom)
+    +getChatroom()
+
+    {abstract} +sendMessage(string to, string message);
+    {abstract} +receiveMessage(string from, string message);
 }
 
-class ConcreteColleague1 {
+class UserDefault {
+    +sendMessage(string to, string message)
+    +receiveMessage(string from, string message)
 }
 
-class ConcreteColleague2 {
+class UserAdmin {
+    +sendMessage(string to, string message)
+    +receiveMessage(string from, string message)
 }
 
 
-ConcreteMediator -up-|> Mediator
-Colleague o-right-> Mediator
+ChatSocial -up-|> Chatroom
+User o-right-> Chatroom
 
-ConcreteMediator o-down-> ConcreteColleague1
-ConcreteMediator o-down-> ConcreteColleague2
+ChatSocial o-down-> UserDefault
+ChatSocial o-down-> UserAdmin
 
-ConcreteColleague1 -up-|> Colleague
-ConcreteColleague2 -up-|> Colleague
+UserDefault -up-|> User
+UserAdmin -up-|> User
 
 @enduml
 ```

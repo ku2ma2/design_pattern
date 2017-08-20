@@ -27,10 +27,10 @@ abstract class User
      * @param int $name ユーザー名
      * @return void
      */
-     public function __construct(string $name)
-     {
-         $this->name = $name;
-     }
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
 
     /**
      * ユーザー名取得
