@@ -1,4 +1,4 @@
-# Chatroom パターン
+# Mediator パターン
 
 
 ```uml
