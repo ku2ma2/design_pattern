@@ -4,7 +4,6 @@
 ```uml
 @startuml
 
-
 interface AbstractDisplay {
     {abstract} +void open()
     {abstract} +void print()
@@ -32,7 +31,6 @@ class StringDisplay {
 
 CharDisplay -up-|> AbstractDisplay
 StringDisplay -up-|> AbstractDisplay
-
 
 @enduml
 ```

@@ -54,3 +54,4 @@ GraphObserver .up.|> Observer
 | GraphObserver | 簡易グラフで数を表示するクラス |
 | Main | 動作テスト用クラス |
 
+- PHPでは SplObserver と SplSubject を利用
