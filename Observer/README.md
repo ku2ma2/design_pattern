@@ -55,3 +55,5 @@ GraphObserver .up.|> Observer
 | Main | 動作テスト用クラス |
 
 - PHPでは SplObserver と SplSubject を利用
+- [PHP: SplObserver \- Manual](http://php.net/manual/ja/class.splobserver.php)
+- [PHP: SplSubject \- Manual](http://php.net/manual/ja/class.splsubject.php)
