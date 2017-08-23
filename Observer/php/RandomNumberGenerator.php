@@ -17,10 +17,27 @@ class RandomNumberGenerator extends NumberGenerator
 {
     private $number;
 
+    /**
+     * 設定された数の取得
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function getNumber()
     {
         return $this->number;
     }
+
+    /**
+     * 出力を通知
+     *
+     * ランダムな数を生成してObserver側に通知
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function execute()
     {
         for ($i=0; $i<20; $i++) {
