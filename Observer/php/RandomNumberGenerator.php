@@ -24,7 +24,7 @@ class RandomNumberGenerator extends NumberGenerator
     public function execute()
     {
         for ($i=0; $i<20; $i++) {
-            $number = mt_rand(0, 50);
+            $this->number = mt_rand(0, 50);
             $this->notify();
         }
     }

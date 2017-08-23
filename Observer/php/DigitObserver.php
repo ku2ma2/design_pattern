@@ -16,7 +16,7 @@ require_once __DIR__ . '/NumberGenerator.php';
  */
 class DigitObserver implements \SplObserver
 {
-    public function update(NumberObject $generator)
+    public function update(\SplSubject $generator)
     {
         echo "DigitObserver: {$generator->getNumber()}\n";
     }
