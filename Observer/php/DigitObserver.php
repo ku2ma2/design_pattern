@@ -16,6 +16,17 @@ require_once __DIR__ . '/NumberGenerator.php';
  */
 class DigitObserver implements \SplObserver
 {
+
+    /**
+     * 通知を受け取った後の処理
+     *
+     * Subject側から通知を受け取った後に行う処理
+     * ここでは設定された数を表示するだけ
+     *
+     * @access public
+     * @param object $generator SplSubjectオブジェクト
+     * @return void
+     */
     public function update(\SplSubject $generator)
     {
         echo "DigitObserver: {$generator->getNumber()}\n";

@@ -16,6 +16,16 @@ require_once __DIR__ . '/NumberGenerator.php';
  */
 class GraphObserver implements \SplObserver
 {
+    /**
+     * 通知を受け取った処理
+     *
+     * Subject側から通知を受け取った後に行う処理。
+     * ここでは設定された数字分「*」を表示している
+     *
+     * @access public
+     * @param object $generator SplSubjectオブジェクト
+     * @return void
+     */
     public function update(\SplSubject $generator)
     {
         echo "GraphObserver: ";
