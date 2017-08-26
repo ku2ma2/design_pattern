@@ -6,7 +6,7 @@ require_once __DIR__ . '/User.php';
 require_once __DIR__ . '/Chatroom.php';
 
 /**
- * 発生したトラブルを表すクラス、トラブル番号(number)を持つ
+ * 通常ユーザー
  *
  * @access public
  * @extends \Mediator\User
