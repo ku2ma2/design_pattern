@@ -3,17 +3,18 @@
 namespace Memento;
 
 /**
- * Gamerの状態を表すクラス
+ * 交流チャットルームクラス
  *
  * @access public
  * @extends \Mediator\Chatroom
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class Memento
+class Gamer
 {
     private $money;
     private $fruits = [];
+    private static $fruitsname = ['りんご','ぶどう','バナナ','みかん'];
 
     public function __construct(int $money)
     {
@@ -23,12 +24,14 @@ class Memento
     {
         return $this->money;
     }
-    public function addFruit(string $fruit)
+    public function __toString()
     {
-        $this->fruits[] = $fruit;
+        $result_fruits = implode(',', $this->fruits);
+        return "[money = {$this->money}, fruits = {$result_fruits}]";
     }
-    public function getFruits()
+    private function getFruit()
     {
+        // (bool)mt_rand(0,1);
         return $this->fruits;
     }
 }
