@@ -12,7 +12,7 @@ namespace Memento;
  */
 class Memento
 {
-    private $money;
+    public $money;
     private $fruits = [];
 
     public function __construct(int $money)
