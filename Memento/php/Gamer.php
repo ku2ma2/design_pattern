@@ -79,6 +79,7 @@ class Gamer
     {
         $m = new \Memento\Memento($this->money);
 
+        // Mementoオブジェクトにフルーツを保存する
         foreach ($this->fruits as $f) {
             if ((strpos($f, 'おいしい') === 0)) {
                 $m->addFruit($f);
