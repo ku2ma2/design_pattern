@@ -20,6 +20,9 @@
 - [\[php\] デザインパターン練習 Decorator](https://ku2ma2.github.io/design_pattern/2017/07/24/php-decorator.html)
 - [\[php\] デザインパターン練習 Visitor](https://ku2ma2.github.io/design_pattern/2017/08/02/php-visitor.html)
 - [\[php\] デザインパターン練習 Chain of Responsibility](https://ku2ma2.github.io/design_pattern/2017/08/12/php-chain-of-responsibility.html)
+- [\[php\] デザインパターン練習 Facade](https://ku2ma2.github.io/design_pattern/2017/08/27/php-facade.html)
+- [\[php\] デザインパターン練習 Mediator](https://ku2ma2.github.io/design_pattern/2017/09/01/php-mediator.html)
+
 
 ### PlantUMLメモ
 
