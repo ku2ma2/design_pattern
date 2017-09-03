@@ -12,8 +12,11 @@ namespace State;
  */
 interface Context
 {
-    public function setClock(int $hour);
-    public function changeState(State $state);
-    public function callSecurityCenter(string $msg);
-    public function recordLog(string $msg);
+    public function switchState();
+    public function isAuthenticated();
+    public function getMenu();
+    public function getUserName();
+    public function getCount();
+    public function incrementCount();
+    public function resetCount();
 }

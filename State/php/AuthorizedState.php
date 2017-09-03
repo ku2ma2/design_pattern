@@ -2,7 +2,7 @@
 
 namespace State;
 
-require_once __DIR__ . '/State.php';
+require_once __DIR__ . '/UserState.php';
 
 /**
  * Stateを実装しているクラス。昼間の状態を表す
@@ -12,7 +12,7 @@ require_once __DIR__ . '/State.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class DayState implements State
+class AuthorizedState implements UserState
 {
     private static $singleton = false;
     
@@ -44,30 +44,38 @@ class DayState implements State
     public static function getInstance()
     {
         if (self::$singleton === false) {
-            self::$singleton = new DayState();
+            self::$singleton = new AuthorizedState();
         }
         return self::$singleton;
     }
-    public function doClock(Context $context, int $hour)
+    public function isAuthenticated()
     {
-        if ($hour < 9 || 17 <= $hour) {
-            $context->changeState(NightState::getInstance());
-        }
+        return true;
     }
-    public function doUse(Context $context)
+    public function nextState()
     {
-        $context->recordLog("金庫使用(昼間)");
+        return UnauthorizedState::getInstance();
     }
-    public function doAlerm(Context $context)
+    public function getMenu()
     {
-        $context->callSecurityCenter("非常ベル(昼間)");
+        $menu = '<a href="?mode=inc">カウントアップ</a> | ';
+        $menu .= '<a href="?mode=reset">リセット</a> | ';
+        $menu .= '<a href="?mode=state">ログアウト</a> | ';
+
+        return $menu;
     }
-    public function doPhone(Context $context)
+
+    /**
+     * このインスタンスの複製を許可しないようにする
+     * @throws RuntimeException
+     */
+    final public function __clone()
     {
-        $context->callSecurityCenter("通常の通話(昼間)");
+        throw new RuntimeException('Clone is not allowed against ' . get_class($this));
     }
+
     public function __toString()
     {
-        return "[昼間]";
+        return "[認証済み]";
     }
 }
