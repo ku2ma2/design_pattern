@@ -5,10 +5,10 @@
 @startuml
 
 interface Context {
-    {abstract} +setClock()
-    {abstract} +changeState()
-    {abstract} +callSecurityCenter()
-    {abstract} +recordLog()
+    {abstract} +setClock(int $hour)
+    {abstract} +changeState(State $state)
+    {abstract} +callSecurityCenter(string $msg)
+    {abstract} +recordLog(string $msg)
 }
 
 class SafeFrame {
@@ -20,30 +20,32 @@ class SafeFrame {
 }
 
 interface State {
-    {abstract} +doClock()
-    {abstract} +doUse()
-    {abstract} +doAlerm()
-    {abstract} +doPhone()
+    {abstract} +doClock(Context $context, int $hour)
+    {abstract} +doUse(Context $context)
+    {abstract} +doAlerm(Context $context)
+    {abstract} +doPhone(Context $context)
 }
 
 class DayState {
     -singleton
     -DayState()
     {static} +getInterface()
-    +doClock()
-    +doUse()
-    +doAlerm()
-    +doPhone()
+    +doClock(Context $context, int $hour)
+    +doUse(Context $context)
+    +doAlerm(Context $context)
+    +doPhone(Context $context)
+    +toString()
 }
 
 class NightState {
     -singleton
     -NightState()
     {static} +getInterface()
-    +doClock()
-    +doUse()
-    +doAlerm()
-    +doPhone()
+    +doClock(Context $context, int $hour)
+    +doUse(Context $context)
+    +doAlerm(Context $context)
+    +doPhone(Context $context)
+    +toString()
 }
 
 SafeFrame .up.|> Context
