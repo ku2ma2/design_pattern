@@ -3,11 +3,12 @@
 namespace State;
 
 require_once __DIR__ . '/UserState.php';
+require_once __DIR__ . '/AuthorizedState.php';
 
 /**
- * Stateを実装しているクラス。昼間の状態を表す
+ * UserStateを実装しているクラス。未認証の状態を表わす
  *
- * @implements State
+ * @implements UserState
  * @access public
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
@@ -38,8 +39,6 @@ class UnauthorizedState implements UserState
      * @access public
      * @param void
      * @return object self::$ingleton ただ一つのインスタンス
-     * @see Class::function
-     * @todo TODO
      */
     public static function getInstance()
     {
@@ -48,14 +47,38 @@ class UnauthorizedState implements UserState
         }
         return self::$singleton;
     }
+
+    /**
+     * 認証されているかどうか
+     *
+     * @access public
+     * @param void
+     * @return bool
+     */
     public function isAuthenticated()
     {
         return false;
     }
+
+    /**
+     * 次の状態へ遷移
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function nextState()
     {
         return AuthorizedState::getInstance();
     }
+
+    /**
+     * メニューの取得
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function getMenu()
     {
         $menu = '<a href="?mode=state">ログイン</a>';
@@ -64,7 +87,14 @@ class UnauthorizedState implements UserState
     }
 
     /**
-     * このインスタンスの複製を許可しないようにする
+     * クローンを禁止
+     *
+     * このインスタンスの複製を許可しないようにしている。
+     *
+     * @final
+     * @access public
+     * @param void
+     * @return void
      * @throws RuntimeException
      */
     final public function __clone()
@@ -72,6 +102,13 @@ class UnauthorizedState implements UserState
         throw new RuntimeException('Clone is not allowed against ' . get_class($this));
     }
 
+    /**
+     * 文字列表現
+     *
+     * @access public
+     * @param void
+     * @return string
+     */
     public function __toString()
     {
         return "[未認証]";
