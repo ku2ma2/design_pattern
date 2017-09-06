@@ -1,4 +1,4 @@
-# State パターン
+# Flyweight パターン
 
 
 ```uml
