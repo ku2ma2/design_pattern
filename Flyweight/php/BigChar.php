@@ -20,7 +20,7 @@ class BigChar
      * SplFileObjectを受け取ってクラス変数 $fontdata に格納
      *
      * @access public
-     * @param void
+     * @param string $charname 大きな文字で出力する文字
      * @return void
      * @see http://php.net/manual/ja/class.splfileobject.php
      */
