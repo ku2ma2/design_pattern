@@ -21,27 +21,25 @@ class BigChar
      *
      * @access public
      * @param void
-     * @return bool
+     * @return void
      * @see http://php.net/manual/ja/class.splfileobject.php
      */
     public function __construct(string $charname)
     {
         $this->charname = $charname;
         $file = __DIR__."/big{$charname}.txt"; // ファイル名作成
+        $this->fontdata = '';
 
         // ファイルが存在しない場合は例外を投げる
         if (!is_file($file)) {
             throw new \RuntimeException('ファイルが見つかりません: ' . $file);
-            return false;
         }
 
         // SplFileObjectでファイル操作する
         $f = new \SplFileObject($file);
-        $this->fontdata = '';
         foreach ($f as $line_num => $line) {
             $this->fontdata .= $line;
         }
-        return true;
     }
 
     /**
