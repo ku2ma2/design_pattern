@@ -2,6 +2,8 @@
 
 namespace Flyweight;
 
+require_once __DIR__ . '/BigCharFactory.php';
+
 /**
  * BigCharを集めて作った「大きな文字列」を表すクラス
  *

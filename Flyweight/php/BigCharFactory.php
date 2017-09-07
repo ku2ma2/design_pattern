@@ -2,6 +2,8 @@
 
 namespace Flyweight;
 
+require_once __DIR__ . '/BigChar.php';
+
 /**
  * BigCharのインスタンスを共有しながら生成するクラス
  *
