@@ -5,9 +5,9 @@
 @startuml
 
 interface Printable {
-    {abstract} +setPrintName()
+    {abstract} +setPrintName(String name)
     {abstract} +getPrinterName()
-    {abstract} +print()
+    {abstract} +print(String string)
 }
 
 class PrinterProxy {
