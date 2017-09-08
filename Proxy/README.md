@@ -4,33 +4,38 @@
 ```uml
 @startuml
 
-class BigChar {
-    -charname
-    -fontdata
-    +print()
+interface Printable {
+    {abstract} +setPrintName()
+    {abstract} +getPrinterName()
+    {abstract} +print()
 }
 
-class BigCharFactory {
-    -pool
-    -singleton
-    -BigCharFactory()
-    {static} +getInterface()
-    +getBigChar()
+class PrinterProxy {
+    -name
+    -real
+    -PrinterFactory()
+    +setPrinterName()
+    +getPrinterName()
+    +print()
+    -realize()
 }
 
-class BigString {
-    -bigchars
+class Printer {
+    -name
+    +setPrinterName()
+    +getPrinterName()
     +print()
+    -heavyJob
 }
 
 class Main {
     
 }
 
-BigCharFactory o-up-> BigChar: Creates
-BigString -up-> BigCharFactory: Uses
-BigString o-up-> BigChar: Uses
-Main -left-> BigString: Uses
+PrinterProxy .up.|> Printable
+Printer .up.|> Printable
+PrinterProxy o-right-> Printer: Uses
+Main -right-> PrinterProxy: Uses
 
 
 @enduml
@@ -39,7 +44,7 @@ Main -left-> BigString: Uses
 
 | 名前 | 解説 |
 |:----|:----|
-| BigChar | 「大きな文字」を表すクラス |
-| BigCharFactory | BigCharのインスタンスを共有しながら生成するクラス |
-| BigString | BigCharを集めて作った「大きな文字列」を表すクラス |
+| Printer | 名前付きのプリンタを表すクラス(本人) |
+| Pritable | PrinterとPrinterProxyに共通のインターフェース |
+| PrinterProxy | 名前付きのプリンタを表すクラス(代理人) |
 | Main | 動作テスト用のクラス |
