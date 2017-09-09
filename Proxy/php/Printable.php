@@ -9,7 +9,7 @@ namespace proxy;
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-interface Pritable
+interface Printable
 {
     public function setPrinterName(string $name);
     public function getPrinterName();

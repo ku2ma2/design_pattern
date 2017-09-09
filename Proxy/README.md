@@ -22,10 +22,11 @@ class PrinterProxy {
 
 class Printer {
     -name
-    +setPrinterName()
+    +Printer()
+    +setPrinterName(String name)
     +getPrinterName()
-    +print()
-    -heavyJob
+    +print(String string)
+    -heavyJob(String msg)
 }
 
 class Main {
