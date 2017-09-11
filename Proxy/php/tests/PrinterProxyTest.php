@@ -8,11 +8,21 @@ require_once dirname(__DIR__) . '/PrinterProxy.php';
  */
 final class ProxyPrinterProxyTest extends TestCase
 {
-    public function test_contruct_重い処理のメッセージが表示、実際にはheavyJobのテスト()
+    public function test_getPrinterName_プリンター名の取得()
     {
-        $expected = "インスタンスを生成中\n.....完了。\n";
-        $printer = new \Proxy\PrinterProxy();
+        $expected = "ProxyPrinter(1)";
+        $printer = new \Proxy\PrinterProxy("ProxyPrinter(1)");
+        $actual = $printer->getPrinterName();
 
-        $this->expectOutputString($expected);
+        $this->assertEquals($actual, $expected);
+    }
+
+    public function test_realize_プリンター名の取得()
+    {
+        $expected = "ProxyPrinter(1)";
+        $printer = new \Proxy\PrinterProxy("ProxyPrinter(1)");
+        $actual = $printer->getPrinterName();
+
+        $this->assertEquals($actual, $expected);
     }
 }
