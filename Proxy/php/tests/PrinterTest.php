@@ -11,27 +11,20 @@ final class ProxyPrinterTest extends TestCase
     public function test_contruct_重い処理のメッセージが表示、実際にはheavyJobのテスト()
     {
         $expected = "Printerのインスタンスを生成中\n.....完了。\n";
-        $printer = new \Proxy\Printer();
-
-        $this->expectOutputString($expected);
-    }
-    public function test_setPrinterName_プリンタの名前を設定()
-    {
-        $expected = "Printerのインスタンスを生成中\n.....完了。\n";
         $expected .= "Printerのインスタンス(プリンタ1)を生成中\n.....完了。\n";
     
-        $printer = new \Proxy\Printer();
-        $printer->setPrinterName('プリンタ1');
+        $printer = new \Proxy\Printer('プリンタ1');
 
         $this->expectOutputString($expected);
     }
+
     public function test_getPrinterName_プリンタの名前を設定()
     {
         $output_expected = "Printerのインスタンスを生成中\n.....完了。\n";
         $output_expected .= "Printerのインスタンス(プリンタ2)を生成中\n.....完了。\n";
         $expected = 'プリンタ2';
     
-        $printer = new \Proxy\Printer();
+        $printer = new \Proxy\Printer('プリンタ2');
         $printer->setPrinterName('プリンタ2');
 
         $this->expectOutputString($output_expected);
@@ -47,7 +40,7 @@ final class ProxyPrinterTest extends TestCase
         $output_expected .= "=== プリンタ3 ===\n";
         $output_expected .= "テスト出力します\n";
     
-        $printer = new \Proxy\Printer();
+        $printer = new \Proxy\Printer('プリンタ3');
         $printer->setPrinterName('プリンタ3');
         $printer->print('テスト出力します');
 
