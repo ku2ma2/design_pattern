@@ -11,22 +11,21 @@ require_once __DIR__ . '/Printable.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class Printer implements Printable
+class PrinterProxy implements Printable
 {
     private $name;
+    private $real = null;
 
     /**
      * コンストラクタ
      *
-     * 重処理(heavyJob)を起動する
-     *
      * @access public
-     * @param void
+     * @param string $name プリンタ名
      * @return void
      */
-    public function __construct()
+    public function __construct(string $name)
     {
-        $this->heavyJob("Printerのインスタンスを生成中");
+        $this->name = $name;
     }
 
     /**
@@ -38,8 +37,10 @@ class Printer implements Printable
      */
     public function setPrinterName(string $name)
     {
+        if ($this->real != null) {
+            $this->real->setPrinterName($name);
+        }
         $this->name = $name;
-        $this->heavyJob("Printerのインスタンス({$name})を生成中");
     }
 
     /**
@@ -54,28 +55,27 @@ class Printer implements Printable
         return $this->name;
     }
 
+    /**
+     * 実際の表示
+     *
+     * @access public
+     * @param string $string 表示する文字列
+     * @return void
+     */
     public function print(string $string)
     {
-        echo "=== {$this->name} ===\n";
-        echo $string . "\n";
+        ;
     }
 
     /**
-     * 重い処理(のつもり)
+     * 「本人」本当のプリンターを生成
      *
      * @access private
-     * @param string $msg メッセージ
+     * @param void
      * @return void
      */
-    private function heavyJob(string $msg)
+    private function realize(string $msg)
     {
-        echo $msg."\n";
-
-        for ($i=0; $i<5; $i++) {
-            // usleep(200000); // １秒待つとテスト遅くなるので0.2秒にした。
-            usleep(500);
-            echo ".";
-        }
-        echo "完了。\n";
+        ;
     }
 }
