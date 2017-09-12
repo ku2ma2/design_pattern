@@ -1,11 +1,9 @@
 <?php
-if (!isset($argv) || count($argv) != 2) {
-    echo "Usage: php main.php number\n";
-    echo "  Exapmple: php main.php 1312\n\n";
-    exit(1);
-}
 
-require_once __DIR__ . "/BigString.php";
+require_once __DIR__.'/PrinterProxy.php';
 
-$string = new \Flyweight\BigString($argv[1]);
-$string->print();
+$p = new \Proxy\PrinterProxy('Alice');
+echo "名前は現在 {$p->getPrinterName()} です。\n";
+$p->setPrinterName('Bob');
+echo "名前は現在 {$p->getPrinterName()} です。\n";
+$p->print('Hello, world.');

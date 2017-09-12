@@ -64,7 +64,8 @@ class PrinterProxy implements Printable
      */
     public function print(string $string)
     {
-        ;
+        $this->realize();
+        $this->real->print($string);
     }
 
     /**
@@ -74,8 +75,10 @@ class PrinterProxy implements Printable
      * @param void
      * @return void
      */
-    private function realize(string $msg)
+    private function realize()
     {
-        ;
+        if ($this->real == null) {
+            $this->real = new Printer($this->name);
+        }
     }
 }

@@ -21,12 +21,14 @@ class Printer implements Printable
      * 重処理(heavyJob)を起動する
      *
      * @access public
-     * @param void
+     * @param string $name
      * @return void
      */
-    public function __construct()
+    public function __construct(string $name)
     {
+        $this->name = $name;
         $this->heavyJob("Printerのインスタンスを生成中");
+        $this->heavyJob("Printerのインスタンス({$this->name})を生成中");
     }
 
     /**
@@ -39,7 +41,6 @@ class Printer implements Printable
     public function setPrinterName(string $name)
     {
         $this->name = $name;
-        $this->heavyJob("Printerのインスタンス({$name})を生成中");
     }
 
     /**
@@ -72,8 +73,7 @@ class Printer implements Printable
         echo $msg."\n";
 
         for ($i=0; $i<5; $i++) {
-            // usleep(200000); // １秒待つとテスト遅くなるので0.2秒にした。
-            usleep(500);
+            usleep(10000); // １秒待つとテスト遅くなるので0.1秒にした。
             echo ".";
         }
         echo "完了。\n";
