@@ -4,19 +4,31 @@
 ```uml
 @startuml
 
-class Command {
-    +Execute()
+interface Command {
+    {abstract} +execute()
 }
 
-class Invoker {
+class Queue {
+    -commands
+    -current_index
+    +Queue()
+    +addCommand()
+    +run()
+    +next()
 }
 
 class ConcreteCommand {
-    -state
-    +Execute()
+    -file
+    +ConcreteCommand(File $file)
+    +execute()
 }
-class Receiver {
-    +Action()
+class File {
+    -name
+    +File(String name)
+    +getName()
+    +decompress()
+    +compress()
+    +create()
 }
 
 class Client {
@@ -24,11 +36,11 @@ class Client {
 }
 
 
-Client -right-> Receiver
+Client -right-> File
 Client -right-> ConcreteCommand :Create
-ConcreteCommand -left-> Receiver
+ConcreteCommand -left-> File
 ConcreteCommand -up-|> Command
-Invoker o-right-> Command
+Queue o-right-> Command
 
 @enduml
 ```
