@@ -2,6 +2,7 @@
 namespace proxy;
 
 require_once __DIR__ . '/Printable.php';
+require_once __DIR__ . '/Printer.php';
 
 /**
  * 名前付きのプリンタを表すクラス(本人)
