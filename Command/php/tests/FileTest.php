@@ -6,7 +6,7 @@ require_once dirname(__DIR__) . '/File.php';
 /**
  * Command File Test
  */
-final class CommandTestTest extends TestCase
+final class CommandFileTest extends TestCase
 {
     public function test_getName_名前を取得する()
     {

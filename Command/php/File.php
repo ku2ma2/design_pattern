@@ -8,7 +8,6 @@ namespace Command;
  * @access public
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
- * @todo TODO
  */
 class File
 {
