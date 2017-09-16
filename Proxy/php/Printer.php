@@ -75,7 +75,7 @@ class Printer implements Printable
         for ($i=0; $i<5; $i++) {
             // 他のテストで重くなるので 0.01秒にしてある
             // Proxyのテストをする場合は数を大きくして重い処理にする
-            usleep(10000);
+            usleep(1000);
             echo ".";
         }
         echo "完了。\n";
