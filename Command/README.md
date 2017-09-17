@@ -1,4 +1,4 @@
-# Proxy パターン
+# Command パターン
 
 
 ```uml

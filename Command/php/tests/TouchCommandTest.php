@@ -16,6 +16,6 @@ final class CommandTouchCommandTest extends TestCase
         $touch = new \Command\TouchCommand($file);
         $actual = $touch->execute();
 
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
 }

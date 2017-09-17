@@ -23,7 +23,7 @@ final class CommandFileTest extends TestCase
         $file = new \Command\File('次郎');
         $actual = $file->decompress();
 
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
     final public function test_compress_圧縮する()
     {
@@ -32,7 +32,7 @@ final class CommandFileTest extends TestCase
         $file = new \Command\File('三郎');
         $actual = $file->compress();
 
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
     final public function test_create_作成する()
     {
@@ -41,6 +41,6 @@ final class CommandFileTest extends TestCase
         $file = new \Command\File('四郎');
         $actual = $file->create();
 
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
 }

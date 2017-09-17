@@ -6,7 +6,7 @@ require_once __DIR__ .'/Command.php';
 require_once __DIR__ .'/File.php';
 
 /**
- * ファイルの作成コマンド
+ * ファイルのコピーコマンド
  *
  * ConcreteCommandクラスに相当
  *
@@ -15,7 +15,7 @@ require_once __DIR__ .'/File.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class TouchCommand implements Command
+class CopyCommand implements Command
 {
     private $file;
 
@@ -40,6 +40,7 @@ class TouchCommand implements Command
      */
     public function execute()
     {
-        $this->file->create();
+        $file = new \Command\File("copy_of_". $this->file->getName());
+        $file->create();
     }
 }

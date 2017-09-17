@@ -6,7 +6,7 @@ require_once __DIR__ .'/Command.php';
 require_once __DIR__ .'/File.php';
 
 /**
- * ファイルの作成コマンド
+ * ファイルの圧縮コマンド
  *
  * ConcreteCommandクラスに相当
  *
@@ -15,7 +15,7 @@ require_once __DIR__ .'/File.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class TouchCommand implements Command
+class CompressCommand implements Command
 {
     private $file;
 
@@ -40,6 +40,6 @@ class TouchCommand implements Command
      */
     public function execute()
     {
-        $this->file->create();
+        $this->file->compress();
     }
 }
