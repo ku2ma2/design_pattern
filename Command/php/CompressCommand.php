@@ -33,6 +33,6 @@ class CompressCommand implements Command
 
     public function execute()
     {
-        return $this->file->compress();
+        $this->file->compress();
     }
 }

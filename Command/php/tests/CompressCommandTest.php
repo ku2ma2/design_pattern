@@ -16,6 +16,6 @@ final class CommandCompressCommandTest extends TestCase
         $compress = new \Command\CompressCommand($file);
         $actual = $compress->execute();
 
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
 }

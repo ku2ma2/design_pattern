@@ -33,6 +33,6 @@ class TouchCommand implements Command
 
     public function execute()
     {
-        return $this->file->create();
+        $this->file->create();
     }
 }

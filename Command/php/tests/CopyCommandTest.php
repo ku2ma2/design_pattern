@@ -16,6 +16,6 @@ final class CommandCopyCommandTest extends TestCase
         $copy = new \Command\CopyCommand($file);
         $actual = $copy->execute();
 
-        $this->assertEquals($expected, $actual);
+        $this->expectOutputString($expected);
     }
 }

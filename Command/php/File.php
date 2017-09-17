@@ -39,14 +39,14 @@ class File
 
     public function decompress()
     {
-        return "{$this->name}を展開しました\n";
+        echo "{$this->name}を展開しました\n";
     }
     public function compress()
     {
-        return "{$this->name}を圧縮しました\n";
+        echo "{$this->name}を圧縮しました\n";
     }
     public function create()
     {
-        return "{$this->name}を作成しました\n";
+        echo "{$this->name}を作成しました\n";
     }
 }

@@ -34,6 +34,6 @@ class CopyCommand implements Command
     public function execute()
     {
         $file = new \Command\File("copy_of_". $this->file->getName());
-        return $file->create();
+        $file->create();
     }
 }
