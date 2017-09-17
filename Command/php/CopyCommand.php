@@ -31,6 +31,13 @@ class CopyCommand implements Command
         $this->file = $file;
     }
 
+    /**
+     * コマンドの実行
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function execute()
     {
         $file = new \Command\File("copy_of_". $this->file->getName());

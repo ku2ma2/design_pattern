@@ -31,6 +31,14 @@ class Queue
     {
         $this->commands[] = $command;
     }
+
+    /**
+     * コマンドのリストを全て実行
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function run()
     {
         foreach ($this->commands as $command) {

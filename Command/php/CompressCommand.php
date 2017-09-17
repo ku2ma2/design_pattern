@@ -31,6 +31,13 @@ class CompressCommand implements Command
         $this->file = $file;
     }
 
+    /**
+     * コマンドの実行
+     *
+     * @access public
+     * @param void
+     * @return void
+     */
     public function execute()
     {
         $this->file->compress();
