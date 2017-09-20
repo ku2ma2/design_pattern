@@ -6,7 +6,7 @@ require_once __DIR__.'/Node.php';
 require_once __DIR__.'/Context.php';
 
 /**
- * <repeat command>に対応するクラス
+ * <primitive command>に対応するクラス
  *
  * ex)
  * <primitive command> ::= go | right | left
