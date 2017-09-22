@@ -2,6 +2,8 @@
 
 namespace Interpreter;
 
+require_once __DIR__. '/ParseException.php';
+
 /**
  * 構文解析のための前後関係を表すクラス
  *
