@@ -17,11 +17,11 @@ require_once __DIR__.'/ParseException.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class ProgramCommandNode extends Node
+class PrimitiveCommandNode extends Node
 {
     private $name;
 
-    private function parse(Context $context)
+    public function parse(Context $context)
     {
         $this->name = $context->currentToken();
         $context->skipToken($this->name);

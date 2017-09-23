@@ -3,6 +3,7 @@
 namespace Interpreter;
 
 require_once __DIR__.'/Node.php';
+require_once __DIR__.'/CommandNode.php';
 require_once __DIR__.'/Context.php';
 require_once __DIR__.'/ParseException.php';
 
@@ -17,11 +18,11 @@ require_once __DIR__.'/ParseException.php';
  * @author ku2ma2 <motorohi.tsumaniku@gmail.com>
  * @copyright ku2ma2
  */
-class ProgramNode extends Node
+class CommandListNode extends Node
 {
     private $list = [];
 
-    private function parse(Context $context)
+    public function parse(Context $context)
     {
         while (true) {
             if ($context->currentToken() === null) {
@@ -39,6 +40,6 @@ class ProgramNode extends Node
 
     public function __toString(): string
     {
-        return $this->list ? "[".join(" ", $this->list) .":" : "[]";
+        return $this->list ? "[".join(" ", $this->list) ."]" : "[]";
     }
 }

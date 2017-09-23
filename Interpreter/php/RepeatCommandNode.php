@@ -21,9 +21,9 @@ class RepeatCommandNode extends Node
     private $number;
     private $commandListNode;
 
-    private function parse(Context $context)
+    public function parse(Context $context)
     {
-        $context->skipToken($this->name);
+        $context->skipToken('repeat');
         $this->number = $context->currentNumber();
         $context->nextToken();
 
