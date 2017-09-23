@@ -4,6 +4,7 @@ namespace Interpreter;
 
 require_once __DIR__.'/Node.php';
 require_once __DIR__.'/Context.php';
+require_once __DIR__.'/ParseException.php';
 
 /**
  * <command list>に対応するクラス
