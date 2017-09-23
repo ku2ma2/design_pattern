@@ -2,7 +2,7 @@
 
 namespace Interpreter;
 
-class ParseException extends Exception
+class ParseException extends \Exception
 {
     public function __construct(string $msg)
     {

@@ -28,10 +28,12 @@ class Context
         $this->currentToken = ($this->currentToken === null)
             ? current($this->token)
             : next($this->token);
+
+        return $this->currentToken;
     }
     public function currentToken(): string
     {
-        return $this->currentToken();
+        return $this->currentToken;
     }
     public function skipToken(string $token)
     {
