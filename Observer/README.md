@@ -52,7 +52,7 @@ GraphObserver .up.|> Observer
 | RandomNumberGenerator | ランダムに数を生成するクラス |
 | DigitObserver | 数字で数を表示するクラス |
 | GraphObserver | 簡易グラフで数を表示するクラス |
-| Main | 動作テスト用クラス |
+| Main | 動作テスト用クラス |
 
 - PHPでは SplObserver と SplSubject を利用
 - [PHP: SplObserver \- Manual](http://php.net/manual/ja/class.splobserver.php)
