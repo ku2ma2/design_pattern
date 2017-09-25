@@ -22,6 +22,7 @@
 - [\[php\] デザインパターン練習 Chain of Responsibility](https://ku2ma2.github.io/design_pattern/2017/08/12/php-chain-of-responsibility.html)
 - [\[php\] デザインパターン練習 Facade](https://ku2ma2.github.io/design_pattern/2017/08/27/php-facade.html)
 - [\[php\] デザインパターン練習 Mediator](https://ku2ma2.github.io/design_pattern/2017/09/01/php-mediator.html)
+- [\[php\] デザインパターン練習 Observer](https://ku2ma2.github.io/design_pattern/2017/09/25/php-observer.html)
 
 
 ### PlantUMLメモ
