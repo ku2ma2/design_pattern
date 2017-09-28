@@ -26,6 +26,7 @@
 - [\[php\] デザインパターン練習 Memento](https://ku2ma2.github.io/design_pattern/2017/09/26/php-memento.html)
 - [\[php\] デザインパターン練習 State](https://ku2ma2.github.io/design_pattern/2017/09/27/php-state.html)
 - [\[php\] デザインパターン練習 Flyweight](https://ku2ma2.github.io/design_pattern/2017/09/28/php-flyweight.html)
+- [\[php\] デザインパターン練習 Proxy](https://ku2ma2.github.io/design_pattern/2017/09/29/php-proxy.html)
 
 ### PlantUMLメモ
 
