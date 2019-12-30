@@ -2,12 +2,12 @@
 
 デザパタ練習
 
- [増補改訂版Java言語で学ぶデザインパターン入門](http://www.hyuki.com/dp/) を元にPHPで実装していく。
- 
+[増補改訂版 Java 言語で学ぶデザインパターン入門](http://www.hyuki.com/dp/) を元に PHP で実装していく。
+
 ## ブログに書いたメモ
 
-- [\[php\] デザインパターン練習 Iterator](https://ku2ma2.github.io/design_pattern/2017/05/30/php-iterator.html)
-- [\[php\] デザインパターン練習 Adapter](https://ku2ma2.github.io/design_pattern/2017/06/02/php-adapter.html)
+- [\[php\] デザインパターン練習 Iterator](https://blog.utaminuk.com/2017/05/30/php-design-pattern-iterator/)
+- [\[php\] デザインパターン練習 Adapter](https://blog.utaminuk.com/2017/06/02/adapter-design-pattern-php/)
 - [\[php\] デザインパターン練習 Template Method](https://ku2ma2.github.io/design_pattern/2017/06/08/php-template.html)
 - [\[php\] デザインパターン練習 Facotry Method](https://ku2ma2.github.io/design_pattern/2017/06/20/php-factory.html)
 - [\[php\] デザインパターン練習 Singleton](https://ku2ma2.github.io/design_pattern/2017/06/30/php-singleton.html)
@@ -30,9 +30,9 @@
 - [\[php\] デザインパターン練習 Command](https://ku2ma2.github.io/design_pattern/2017/09/30/php-command.html)
 - [\[php\] デザインパターン練習 Interpreter](https://ku2ma2.github.io/design_pattern/2017/10/01/php-interpreter.html)
 
-### PlantUMLメモ
+### PlantUML メモ
 
-PlantUMLを表示する。Macの場合
+PlantUML を表示する。Mac の場合
 
 ```sh
 brew install graphviz
@@ -40,8 +40,6 @@ brew cask install java
 brew install plantuml
 ```
 
-Chrome拡張をインストールするとGithubのソース上で確認できる。
+Chrome 拡張をインストールすると Github のソース上で確認できる。
 
 - [Pegmatite](https://chrome.google.com/webstore/detail/pegmatite/jegkfbnfbfnohncpcfcimepibmhlkldo)
-
-
